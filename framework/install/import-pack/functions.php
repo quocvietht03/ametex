@@ -7,13 +7,24 @@
  * @version 1.0
  */
 
+if( ! function_exists( 'ametex_import_pack_path_to_url' ) ) {
+    /**
+     * Help function path to url 
+     * 
+     */
+    function ametex_import_pack_path_to_url( $path ) {
+        return get_site_url() . '/' . str_replace( ABSPATH, '', $path );
+    }
+}
+
+
 {
     /**
      * Defines
      * 
      */
-    define( 'IMPORT_DIR', get_template_directory() . '/framework/install/import-pack/' );
-    define( 'IMPORT_URI', get_template_directory_uri() . '/framework/install/import-pack/' );
+    define( 'IMPORT_DIR', __DIR__ );
+    define( 'IMPORT_URI', ametex_import_pack_path_to_url( __DIR__ ) );
     define( 'IMPORT_VER', '1.0.0' );
 
     define( 'IMPORT_REMOTE_SERVER', 'http://bearsthemespremium.com/install/demo/ametex/' );
@@ -61,7 +72,7 @@ if( ! function_exists( 'ametex_register_import_page_callback' ) ) {
     function ametex_register_import_page_callback() {
 
         set_query_var( 'tabs', amentex_import_page_tabs() );
-        load_template( IMPORT_DIR . 'templates/import-page.php' );
+        load_template( IMPORT_DIR . '/templates/import-page.php' );
     }
 }
 
@@ -375,6 +386,51 @@ if( ! function_exists( 'ametex_import_pack_backup_site_skip_func' ) ) {
      */
     function ametex_import_pack_backup_site_skip_func() {
 
+        // Install plugin Bears Backup
+        $installer = false;
+        $plugin = [
+            'slug' => 'bears-backup',
+            'source' => IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD . '/bears-backup.zip',
+        ];
+
+        if(! Import_Pack_Plugin_Installer_Helper::is_installed( $plugin )) {
+            
+            $install_response = Import_Pack_Plugin_Installer_Helper::install( $plugin );
+            if( $install_response['success'] == true ) {
+                // Install...
+                $installer = true;
+            } 
+        } else {
+            $installer = true;
+        }
+
+        if( false == $installer ) { 
+            wp_send_json( [
+                'success' => true,
+                'result' => [
+                    'status' => false,
+                    'message' => __( 'Install plugin Bears Backup fail!', 'ametex' ),
+                ]
+            ] );
+
+            exit();
+        }
+
+        $active_response = Import_Pack_Plugin_Installer_Helper::activate( $plugin );
+        $activate = false;
+        
+        if( $active_response['success'] != true ) {
+            wp_send_json( [
+                'success' => true,
+                'result' => [
+                    'status' => false,
+                    'message' => __( 'Active plugin Bears Backup fail!', 'ametex' ),
+                ]
+            ] );
+
+            exit();
+        }
+
         return [
             'form_action' => '__next_step__',
         ];
@@ -431,7 +487,7 @@ if( ! function_exists( 'ametex_import_pack_download_package_step' ) ) {
     /**
      * 
      */
-    function ametex_import_pack_download_package_step( $package_name, $position = 0, $path_file_package = null ) {
+    function ametex_import_pack_download_package_step( $package_name, $position = 0, $package = null ) {
         
         $remote_url = ametex_import_pack_make_remote_url( $package_name, $position );
         
@@ -440,7 +496,7 @@ if( ! function_exists( 'ametex_import_pack_download_package_step' ) ) {
             $result = ametex_import_pack_download_package_step_init( $remote_url, 'package-demo.zip' );
         } else {
             
-            $result = ametex_import_pack_download_package_step_push( $remote_url, $position, $path_file_package );
+            $result = ametex_import_pack_download_package_step_push( $remote_url, $position, $package );
         }
 
         return $result;
@@ -484,7 +540,7 @@ if( ! function_exists( 'ametex_import_pack_download_package_step_init' ) ) {
         }
     
         $upload_dir = wp_upload_dir();
-        $path = $upload_dir['path'];
+        $path = $upload_dir['basedir'];
         $path_file_package = $path . '/' . $file_name;
 
         $head = ametex_import_pack_read_remote_head( $remote_url );
@@ -500,7 +556,7 @@ if( ! function_exists( 'ametex_import_pack_download_package_step_init' ) ) {
                 'download_package_success' => false,
                 'package_size' => $total,
                 'package_download' => $download,
-                'path_file_package' => $path_file_package,
+                'package' => $file_name,
                 'x_position' => $head['x-position'],
             );
         } else {
@@ -516,7 +572,7 @@ if( ! function_exists( 'ametex_import_pack_download_package_step_push' ) ) {
      * Download package push data 
      * 
      */
-    function ametex_import_pack_download_package_step_push( $remote_url, $position, $path_file_package ) {
+    function ametex_import_pack_download_package_step_push( $remote_url, $position, $package ) {
 
         global $wp_filesystem;
         if ( empty( $wp_filesystem ) ) {
@@ -527,11 +583,16 @@ if( ! function_exists( 'ametex_import_pack_download_package_step_push' ) ) {
         $head = ametex_import_pack_read_remote_head( $remote_url ); 
         $content = $wp_filesystem->get_contents( $remote_url );
 
+        $upload_dir = wp_upload_dir();
+        $path = $upload_dir['basedir'];
+        $path_file_package = $path . '/' . $package;
+        
+
         if( isset( $head['x-position'] ) && $head['x-position'] == -1 ) {
             return array(
                 'download_package_success' => true,
                 'remote_url' => $remote_url,
-                'path_file_package' => $path_file_package,
+                'package' => $package,
             );
         }
 
@@ -541,7 +602,7 @@ if( ! function_exists( 'ametex_import_pack_download_package_step_push' ) ) {
         if( BBACKUP_Helper_Function_File_Appent_Content( $path_file_package, $content ) ) {
             return array(
                 'package_download' => $download,
-                'path_file_package' => $path_file_package,
+                'package' => $package,
                 'x_position' => $head['x-position'],
             );
         }

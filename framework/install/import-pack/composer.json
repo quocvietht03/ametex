@@ -1,8 +1,6 @@
 {
-    "name": "beplus/import-pack",
+    "name": "huynhhuynh/import-pack",
     "description": "WordPress import demo",
-    "type": "wordpress, import, dummy data, backup, restore",
-    "license": "Mit",
     "authors": [
         {
             "name": "Hieuhuynh",
@@ -12,5 +10,8 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.6.0"
+    },
+    "autoload": {
+        "files": ["/functions.php"]
     }
 }
