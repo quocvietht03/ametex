@@ -23,7 +23,7 @@ if( count( $tabs ) <= 0 ) return;
                 </li> <!-- #tab_<?php echo esc_attr( $tab['id'] ); ?> -->
                 <?php endforeach; ?>
 
-                <li class="__open-sticky">
+                <li class="__open-ticket">
                     <a href="<?php echo esc_url( IMPORT_URL_OPEN_STICKY ); ?>" target="_blank">
                         <span class="dashicons dashicons-editor-help"></span>
                         <?php _e( 'Open Ticket', 'ametex' ); ?>

@@ -59,8 +59,8 @@ $plugin_includes = [
 return apply_filters( 'ametex/import_pack/package_demo', [
     [
         'package_name' => 'ametex-main',
-        'preview' => IMPORT_URI . '/images/ametex-main-preview.jpg',
-        'url_demo' => 'https://bearsthemespremium.com/theme/ametex/', // image size 680x475
+        'preview' => IMPORT_URI . '/images/ametex-main-preview.jpg', // image size 680x475
+        'url_demo' => 'https://bearsthemespremium.com/theme/ametex/', 
         'title' => __( 'Ametex Main', 'ametex' ),
         'description' => __( 'Ametex main demo, include 5 home demos & full inner page (Contact, About, Company, blog, etc.).' ),
         'plugins' => $plugin_includes,
