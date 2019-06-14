@@ -7,29 +7,39 @@
  * @version 1.0.10
  */
 
+{
+    define( 'IMPORT_DIR', __DIR__ );
+    define( 'IMPORT_VER', '1.0.10' );
+}
+
 if( ! function_exists( 'beplus_import_pack_path_to_url' ) ) {
     /**
      * Help function path to url 
      * 
      */
-    function beplus_import_pack_path_to_url( $path ) {
+    function beplus_import_pack_path_to_url( $path = __DIR__ ) {
         return get_site_url() . '/' . str_replace( ABSPATH, '', $path );
     }
 }
 
-
 {
     /**
-     * Defines
+     * Defineds
      * 
      */
-    define( 'IMPORT_THEMENAME', apply_filters( 'beplus/import_pack/themename', 'Ametex' ) );
-    define( 'IMPORT_DIR', __DIR__ );
-    define( 'IMPORT_URI', beplus_import_pack_path_to_url( __DIR__ ) );
-    define( 'IMPORT_VER', '1.0.10' );
-    define( 'IMPORT_REMOTE_SERVER', apply_filters( 'beplus/import_pack/import_remote_server', 'http://bearsthemespremium.com/install/demo/ametex/' ) );
-    define( 'IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD', apply_filters( 'beplus/import_pack/import_remote_server_plugin_download', 'http://bearsthemespremium.com/install/plugin/' ) );
-    define( 'IMPORT_URL_OPEN_TICKET', apply_filters( 'beplus/import_pack/import_url_open_ticket', 'https://bearsthemes.ticksy.com' ) );
+    
+    function beplus_import_pack_defineds() {
+        /**
+         * Defines 
+         * 
+         */
+
+        define( 'IMPORT_THEMENAME', apply_filters( 'beplus/import_pack/themename', 'Ametex' ) );
+        define( 'IMPORT_URI', apply_filters( 'beplus/import_pack/import_uri', beplus_import_pack_path_to_url() ) );  
+        define( 'IMPORT_REMOTE_SERVER', apply_filters( 'beplus/import_pack/import_remote_server', 'http://bearsthemespremium.com/install/demo/ametex/' ) );
+        define( 'IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD', apply_filters( 'beplus/import_pack/import_remote_server_plugin_download', 'http://bearsthemespremium.com/install/plugin/' ) );
+        define( 'IMPORT_URL_OPEN_TICKET', apply_filters( 'beplus/import_pack/import_url_open_ticket', 'https://bearsthemes.ticksy.com' ) );
+    }
 }
 
 {
