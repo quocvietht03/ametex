@@ -1,7 +1,7 @@
 <article <?php post_class(); ?>>
 	<div class="bt-post-item">
 		<?php
-		if(is_archive()){
+		if(!is_single()){
 			?>
 				<h3 class="bt-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 			<?php
