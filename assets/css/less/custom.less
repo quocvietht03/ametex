@@ -260,6 +260,76 @@ body{
 			}
 		}
 	}
+	&.elementor-testimonial--layout-image_left, &.elementor-testimonial--layout-image_right{
+		.elementor-testimonial{
+			max-width: 960px;
+			margin-left: auto;
+			margin-right: auto;
+			webkit-box-align: center;
+			-webkit-align-items: center;
+			-ms-flex-align: center;
+			align-items: center;
+			.elementor-testimonial__content{
+				.elementor-testimonial__text{
+					color: #716886;
+					font-size: 20px;
+					font-weight: 400;
+					font-style: normal;
+					line-height: 34px;
+				}
+				.elementor-testimonial__name{
+					color: #4d3484;
+					font-size: 28px;
+					font-weight: 700;
+					text-transform: uppercase;
+					font-style: normal;
+					line-height: 34px;
+				}
+				.elementor-testimonial__title{
+					color: #fa7a60;
+					font-size: 18px;
+					font-weight: 400;
+					font-style: normal;
+					line-height: 30px;
+				}
+			}
+			.elementor-testimonial__footer{
+				padding-right: 60px;
+				.elementor-testimonial__image img{
+					width: 386px;
+					height: auto;
+				}
+			}
+		}
+		.elementor-main-swiper{
+			.eicon-chevron-left, .eicon-chevron-right{
+				font-family: 'font1204858589';
+				
+			}
+			.eicon-chevron-left:before {
+				content: "\E816";
+			}
+			.eicon-chevron-right:before {
+				content: "\E817";
+			}
+			.elementor-swiper-button-prev, .elementor-swiper-button-next{
+				color: #716886;
+				&:hover{
+					color: @main-color;
+				}
+			}
+		} 
+		@media(max-width: 991px){
+			.elementor-testimonial{
+				.elementor-testimonial__content{
+					text-align: center;
+				}
+				.elementor-testimonial__footer{
+					display: none;
+				}
+			}
+		}
+	}
 }
 
 .bt-team-item{
@@ -270,6 +340,9 @@ body{
 			display: inline-block;
 			vertical-align: middle;
 			width: 40%;
+		}
+		.eael-team-image>figure img{
+			height: auto;
 		}
 		.eael-team-content{
 			width: 60%;
@@ -461,6 +534,36 @@ body{
 					z-index: 5;
 				}
 			}
+		}
+	}
+}
+
+.bt-acticle-template1{
+	background: #ffffff;
+	overflow: hidden;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+    -webkit-box-shadow: 0px 16px 24px 0px fadeout(@main-color, 70);
+    -ms-box-shadow: 0px 16px 24px 0px fadeout(@main-color, 70);
+    box-shadow: 0px 16px 24px 0px fadeout(@main-color, 70);
+	.elementor-element-172f577{
+		padding: 15px 30px 30px 30px;
+		.elementor-heading-title{
+			font-size: 24px;
+			line-height: 32px;
+		}
+		.elementor-icon-list-icon{
+			width:15px;
+			i{
+				color: @main-color;
+				font-size: 15px;
+			}
+		}
+		.elementor-icon-list-text, .elementor-icon-list-text a{
+			color: @main-color;
+		}
+		.elementor-icon-list-item{
+			font-size:15px;
 		}
 	}
 }
