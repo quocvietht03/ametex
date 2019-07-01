@@ -5,7 +5,7 @@
  * Other API classes may extend this class to take use of the
  * POST and GET request functions.
  */
-define("ITEM_ID","22634767"); // Replace it by current item id
+define("ITEM_ID","23986132"); // Replace it by current item id
 define("TOKEN_KEY","BElz0yj5RELlrhl2W4TOO1wPsscHnJXo");
 // Bearsthemes API
 class BearsthemesAPI {
