@@ -1,0 +1,1 @@
+[25-Jun-2019 21:22:49 UTC] PHP Fatal error:  Call to undefined function get_template_directory() in /home/bearsth1/public_html/theme/ametex/wp-content/themes/ametex/index.php on line 2

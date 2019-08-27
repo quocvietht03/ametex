@@ -1,0 +1,38 @@
+body #site_backtop {
+	color: #ffffff;
+	background: @main-color;
+	border-color: @main-color;
+	&:hover, &:focus{
+		background: darken(@main-color, 10);
+		border-color: darken(@main-color, 10);
+	}
+}
+
+#bt-main {
+	.easing-animation;
+	background: @light-color;
+	position: relative;
+	overflow: hidden; 
+	.boxed & {
+		max-width: @site-width;
+		margin: auto;
+		-webkit-box-shadow: 0 0 10px 0 fadeout(#000000, 50);
+		box-shadow: 0 0 10px 0 fadeout(#000000, 50);
+		.vc_row[data-vc-full-width] {
+			width: 100% !important;
+			left: 15px !important;
+		}
+	}
+}
+
+.bt-error404-wrap {
+	text-align: center;
+	max-width: 640px;
+	margin-left: auto;
+	margin-right: auto;
+	h3{
+		font-size: 24px;
+		line-height: 30px;
+		margin-bottom: 40px;
+	}
+}
