@@ -3,6 +3,10 @@
 require get_template_directory() . '/framework/VerifyTheme.php';
 require  get_template_directory() . '/framework/install/import-pack/functions.php';
 
+add_filter( 'beplus/import_pack/import_uri', function() {
+	return get_template_directory_uri() . '/framework/install/import-pack/';
+} );
+
 // require_once get_template_directory().'/framework/install/plugin_required.php';
 // require_once get_template_directory().'/framework/install/merlin/vendor/autoload.php';
 // require_once get_template_directory().'/framework/install/merlin/class-merlin.php';

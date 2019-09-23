@@ -18,7 +18,7 @@ add_action( 'elementor/elements/categories_registered', 'ametex_add_elementor_wi
 // Add Plugin actions
 function ametex_init_widgets() {
 	// Register Widget Scripts
-	wp_register_script( 'isotope-pkgd-min', get_template_directory_uri() . '/framework/elements/js/isotope.pkgd.min.js', array( 'jquery' ), '', true );
+	wp_register_script('isotope-pkgd-min', get_template_directory_uri().'/framework/elements/js/isotope.pkgd.min.js', array('jquery'), '', true);
 
 	// Include Widget files
 	require_once( get_template_directory() . '/framework/elements/step-box.php' );

@@ -1,11 +1,11 @@
 /**
  * Import pack javascript
- * 
- * @package Ametex 
+ *
+ * @package Import Pack
  * @author BePlus
  */
 
-/** 
+/**
  * import_pack_php_data
  *  - ajax_url
  */
@@ -14,8 +14,8 @@
     'use strict';
 
     /**
-     * Serialize form data to JSON 
-     * 
+     * Serialize form data to JSON
+     *
      */
     $.fn.ipSerializeObject=function(){var o={};var a=this.serializeArray();$.each(a,function(){if(o[this.name]){if(!o[this.name].push){o[this.name]=[o[this.name]]}
     o[this.name].push(this.value||'')}else{o[this.name]=this.value||''}});return o}
@@ -36,7 +36,7 @@
                 $( 'body' ).removeClass( '_import-pack-modal-open' );
             },
             '__loading.modal' ( e, enable ) {
-                
+
                 if( true == enable ) {
                     modal_element.addClass( '__is-loading' );
                 } else {
@@ -80,12 +80,12 @@
     ImportPack.LoadImportTemplate = async function( package_id ) {
 
         try {
-            
+
             var result = await $.ajax( {
                 type: 'POST',
                 url: import_pack_php_data.ajax_url,
                 data: {
-                    action: 'ametex_import_pack_modal_import_body_template', 
+                    action: 'beplus_import_pack_modal_import_body_template',
                     package_id: package_id,
                 },
             } )
@@ -96,7 +96,7 @@
             console.log( error );
             alert( 'Error 1: Internal error, Please try again or open ticket!' );
         }
-    }  
+    }
 
     ImportPack.ImportTemplateAddTriggerEvents = function( elem, package_id ) {
 
@@ -127,13 +127,13 @@
             var self = $( this );
             var action_type = self.data( 'type' );
             var form_data =  self.parents( '.actions' ).find( 'form.ip-actions-callback-form' ).ipSerializeObject();
-            
+
             if( ! form_data[action_type] ) return;
 
             $.ajax( {
                 type: 'POST',
                 url: import_pack_php_data.ajax_url,
-                data: { action: 'ametex_import_pack_import_action_ajax_callback', data: {
+                data: { action: 'beplus_import_pack_import_action_ajax_callback', data: {
                     package_id: package_id,
                     action_type: action_type,
                     form_data: form_data,
@@ -177,8 +177,8 @@
         if( true != load_template_result.success ) {
             alert( 'Error 2: Load import step error, Please try again or open ticket!' );
             return;
-        }       
-        
+        }
+
         var import_template = $( load_template_result.content );
 
         await ImportPack.ImportTemplateAddTriggerEvents( import_template, package_id );
@@ -202,8 +202,8 @@
         var result = await $.ajax( {
             type: 'POST',
             url: import_pack_php_data.ajax_url,
-            data: { action: 'ametex_import_pack_install_plugin', data: {
-                plugin_slug: plugin.slug, 
+            data: { action: 'beplus_import_pack_install_plugin', data: {
+                plugin_slug: plugin.slug,
                 plugin_source: plugin.source
             } },
         } )
@@ -228,7 +228,7 @@
             liItem.addClass( '__installer' );
 
             var plugin = {
-                slug: plugin_slug, 
+                slug: plugin_slug,
                 source: plugin_source
             };
 
@@ -262,15 +262,15 @@
     ImportPack.CustomActionInstallPlugins = function() {
 
         /**
-         * agree install plugins include 
-         * 
+         * agree install plugins include
+         *
          */
         $( 'body' ).on( 'click', '#Import_Pack_Modal .step-func-install_plugin .btn-action-yes', async function( e ) {
             e.preventDefault();
-           
+
             var step_container = $( '.ip-import-steps-container' );
             var plugin_list = $( '#Import_Pack_Modal .step-func-install_plugin .ip-plugin-include-checklist li' );
-            
+
             if( plugin_list.length <= 0 ) {
                return;
             }
@@ -278,12 +278,12 @@
             var log = $( `<span class="__message-log"></span>` );
             step_container.find( '.step-func-install_plugin .actions' ).prepend( log );
 
-            await ImportPack.InstallPlugins( plugin_list, 1, { 
-                plugin_before_install_callback( plugin ) { 
-                    var plugin_item = $( this ); 
+            await ImportPack.InstallPlugins( plugin_list, 1, {
+                plugin_before_install_callback( plugin ) {
+                    var plugin_item = $( this );
                     log.html( 'Installing ' + plugin_item.find( '.plg-name' ).html() + ' ...' );
                 },
-                plugin_after_install_callback( result ) { 
+                plugin_after_install_callback( result ) {
                     var plugin_item = $( this );
 
                     if( true == result.success && true == result.status ) {
@@ -293,64 +293,63 @@
                     }
                 },
                 plugin_install_completed_callback() {
-                    log.html( 'Plugins installation completed!' );   
-                    step_container.trigger( '__next_step.import' );   
+                    log.html( 'Plugins installation completed!' );
+                    step_container.trigger( '__next_step.import' );
                 }
             } );
         } )
     }
 
-    ImportPack.DownloadPackage = async function( package_name, position, path_file_package, args ) {
+    ImportPack.DownloadPackage = async function( package_name, position, _package, args ) {
 
         var send_data = {
             package_name: package_name,
             position: position || 0,
-            path_file_package: path_file_package || ''
-        };  
+            package: _package || ''
+        };
 
         try {
-
             var result = await $.ajax( {
                 type: 'POST',
                 url: import_pack_php_data.ajax_url,
                 data: {
-                    action: 'ametex_import_pack_download_package',
+                    action: 'beplus_import_pack_download_package',
                     data: send_data
                 }
             } );
         } catch ( error ) {
-
             console.log( error );
-            return await ImportPack.DownloadPackage( package_name, position, path_file_package, args );
+            return ImportPack.DownloadPackage( package_name, position, _package, args );
         }
+
 
         if( args.after_request_callback ) {
             args.after_request_callback.call( send_data, result );
         }
 
         if( true == result.success && true != result.result.download_package_success ) {
-            await ImportPack.DownloadPackage( package_name, result.result.x_position, result.result.path_file_package, args );
+            await ImportPack.DownloadPackage( package_name, result.result.x_position, result.result.package, args );
         }
 
         return result;
     }
 
-    ImportPack.ExtractPackage = async function( package_name, path_file_package ) {
+    ImportPack.ExtractPackage = async function( package_name, _package ) {
 
         try {
-            
+
             var result = await $.ajax( {
                 type: 'POST',
                 url: import_pack_php_data.ajax_url,
                 data: {
-                    action: 'ametex_import_pack_extract_package_demo',
+                    action: 'beplus_import_pack_extract_package_demo',
                     data: {
                         package_name: package_name,
-                        path_file_package: path_file_package,
+                        package: _package,
                     },
                 }
             } )
-    
+
             return result;
         } catch( error ) {
 
@@ -367,24 +366,24 @@
                 type: 'POST',
                 url: import_pack_php_data.ajax_url,
                 data: {
-                    action: 'ametex_import_pack_restore_data',
+                    action: 'beplus_import_pack_restore_data',
                     data: {
                         package_path: package_path
                     }
                 }
             } )
-    
+
             return result;
         } catch( error ) {
-            
+
             console.log( error );
             alert( `Error: Restore package error!` );
             return;
         }
-    }   
+    }
 
     ImportPack.CustomActionInstallPackage = function() {
-        
+
         $( 'body' ).on( 'click', '#Import_Pack_Modal .ip-step.step-func-download_import_package .btn-action-yes', async function( e ) {
             e.preventDefault();
 
@@ -409,20 +408,20 @@
 
             // Extract package
             log.html( `Extract package...` );
-            var extract_package_result = await ImportPack.ExtractPackage( Current_Package_Id, download_package_result.result.path_file_package );
+            var extract_package_result = await ImportPack.ExtractPackage( Current_Package_Id, download_package_result.result.package );
 
             if( true == extract_package_result.success && true == extract_package_result.result.extract_success ) {
                 log.html( `Extract package successful!` );
-            } 
+            }
 
-            // Restore package 
+            // Restore package
             log.html( `Restore package...` );
             var restore_package_result = await ImportPack.ResorePackage( extract_package_result.result.extract_to );
 
             // console.log( restore_package_result );
             if( true == restore_package_result.success && true == restore_package_result.result.restore ) {
                 log.html( `Restore package successful!` );
-                step_container.trigger( '__next_step.import' );   
+                step_container.trigger( '__next_step.import' );
             }
         } )
     }
@@ -458,7 +457,7 @@
                     type: 'POST',
                     url: import_pack_php_data.ajax_url,
                     data: {
-                        action: `ametex_import_pack_backup_site_substep_${step_name}`,
+                        action: `beplus_import_pack_backup_site_substep_${step_name}`,
                         data: {
                             next_step_data: next_step_data,
                         },
@@ -470,9 +469,9 @@
                 }
 
                 step_item.removeClass( '__loading' );
-                
+
                 if( true == result.success && true == result.result.status ) {
-                    
+
                     next_step_data = ( result.result.next_step_data ) ? result.result.next_step_data : {};
                     step_item.addClass( '__success' );
                 } else {
@@ -506,9 +505,9 @@
 
             if( true == $backup_result ) {
                 log.html( `Backup site successful.` );
-                step_container.trigger( '__next_step.import' );   
-            } 
-            
+                step_container.trigger( '__next_step.import' );
+            }
+
         } )
     }
 

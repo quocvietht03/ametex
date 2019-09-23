@@ -1,20 +1,20 @@
-<?php 
+<?php
 /**
- * Import pack ajax functions 
- * 
- * @package Ametex
+ * Import pack ajax functions
+ *
+ * @package Import Pack
  */
 
-if( ! function_exists( 'ametex_import_pack_modal_import_body_template' ) ) {
-    /** 
-     * Modal import template 
-     * 
+if( ! function_exists( 'beplus_import_pack_modal_import_body_template' ) ) {
+    /**
+     * Modal import template
+     *
      */
-    function ametex_import_pack_modal_import_body_template() {
+    function beplus_import_pack_modal_import_body_template() {
 
         set_query_var( 'package_id', $_POST['package_id'] );
-        set_query_var( 'package_data', ametex_import_pack_get_package_data_by_id( $_POST['package_id'] ) );
-        set_query_var( 'import_steps', ametex_import_pack_import_steps() );
+        set_query_var( 'package_data', beplus_import_pack_get_package_data_by_id( $_POST['package_id'] ) );
+        set_query_var( 'import_steps', beplus_import_pack_import_steps() );
 
         ob_start();
         load_template( IMPORT_DIR . '/templates/modal-body-by-package-id.php' );
@@ -26,17 +26,17 @@ if( ! function_exists( 'ametex_import_pack_modal_import_body_template' ) ) {
         ] );
     }
 
-    add_action( 'wp_ajax_ametex_import_pack_modal_import_body_template', 'ametex_import_pack_modal_import_body_template' );
-    add_action( 'wp_ajax_nopriv_ametex_import_pack_modal_import_body_template', 'ametex_import_pack_modal_import_body_template' );
+    add_action( 'wp_ajax_beplus_import_pack_modal_import_body_template', 'beplus_import_pack_modal_import_body_template' );
+    add_action( 'wp_ajax_nopriv_beplus_import_pack_modal_import_body_template', 'beplus_import_pack_modal_import_body_template' );
 }
 
-if( ! function_exists( 'ametex_import_pack_import_action_ajax_callback' ) ) {
+if( ! function_exists( 'beplus_import_pack_import_action_ajax_callback' ) ) {
     /**
-     * Import action ajax callback 
-     * 
+     * Import action ajax callback
+     *
      */
-    function ametex_import_pack_import_action_ajax_callback() {
-        
+    function beplus_import_pack_import_action_ajax_callback() {
+
         extract( $_POST );
 
         if( ! isset( $data['form_data'] ) ) {
@@ -72,31 +72,29 @@ if( ! function_exists( 'ametex_import_pack_import_action_ajax_callback' ) ) {
         ] ); exit();
     }
 
-    add_action( 'wp_ajax_ametex_import_pack_import_action_ajax_callback', 'ametex_import_pack_import_action_ajax_callback' );
-    add_action( 'wp_ajax_nopriv_ametex_import_pack_import_action_ajax_callback', 'ametex_import_pack_import_action_ajax_callback' );
+    add_action( 'wp_ajax_beplus_import_pack_import_action_ajax_callback', 'beplus_import_pack_import_action_ajax_callback' );
+    add_action( 'wp_ajax_nopriv_beplus_import_pack_import_action_ajax_callback', 'beplus_import_pack_import_action_ajax_callback' );
 }
 
-if( ! function_exists( 'ametex_import_pack_install_plugin' ) ) {
+if( ! function_exists( 'beplus_import_pack_install_plugin' ) ) {
     /**
-     * Install plugin 
-     * 
+     * Install plugin
+     *
      */
-    function ametex_import_pack_install_plugin() {
-
+    function beplus_import_pack_install_plugin() {
         extract( $_POST );
-        // wp_send_json( $_POST );
 
         $installer = false;
         $plugin = ['slug' => $data['plugin_slug']];
         if( ! empty( $data['plugin_source'] ) ) { $plugin['source'] = $data['plugin_source']; }
 
         if(! Import_Pack_Plugin_Installer_Helper::is_installed( $plugin )) {
-            
+
             $install_response = Import_Pack_Plugin_Installer_Helper::install( $plugin );
             if( $install_response['success'] == true ) {
                 // Install...
                 $installer = true;
-            } 
+            }
         } else {
             $installer = true;
         }
@@ -111,7 +109,7 @@ if( ! function_exists( 'ametex_import_pack_install_plugin' ) ) {
 
         $active_response = Import_Pack_Plugin_Installer_Helper::activate( $plugin );
         $activate = false;
-        
+
         if( $active_response['success'] == true ) {
             $activate = true;
         }
@@ -131,23 +129,23 @@ if( ! function_exists( 'ametex_import_pack_install_plugin' ) ) {
         ] );
     }
 
-    add_action( 'wp_ajax_ametex_import_pack_install_plugin', 'ametex_import_pack_install_plugin' );
-    add_action( 'wp_ajax_nopriv_ametex_import_pack_install_plugin', 'ametex_import_pack_install_plugin' );
+    add_action( 'wp_ajax_beplus_import_pack_install_plugin', 'beplus_import_pack_install_plugin' );
+    add_action( 'wp_ajax_nopriv_beplus_import_pack_install_plugin', 'beplus_import_pack_install_plugin' );
 }
 
-if( ! function_exists( 'ametex_import_pack_download_package' ) ) {
+if( ! function_exists( 'beplus_import_pack_download_package' ) ) {
     /**
-     * Download package 
-     * 
+     * Download package
+     *
      */
-    function ametex_import_pack_download_package() {
+    function beplus_import_pack_download_package() {
 
         extract( $_POST );
         $package_name = $data['package_name'];
         $position = isset( $data['position'] ) ? $data['position'] : 0;
-        $path_file_package = isset( $data['path_file_package'] ) ? $data['path_file_package'] : '';
+        $package = isset( $data['package'] ) ? $data['package'] : '';
 
-        $result = ametex_import_pack_download_package_step( $package_name, $position, $path_file_package );
+        $result = beplus_import_pack_download_package_step( $package_name, $position, $package );
 
         wp_send_json( array(
             'success' => true,
@@ -157,21 +155,25 @@ if( ! function_exists( 'ametex_import_pack_download_package' ) ) {
         exit();
     }
 
-    add_action( 'wp_ajax_ametex_import_pack_download_package', 'ametex_import_pack_download_package' );
-    add_action( 'wp_ajax_nopriv_ametex_import_pack_download_package', 'ametex_import_pack_download_package' );
+    add_action( 'wp_ajax_beplus_import_pack_download_package', 'beplus_import_pack_download_package' );
+    add_action( 'wp_ajax_nopriv_beplus_import_pack_download_package', 'beplus_import_pack_download_package' );
 }
 
-if( ! function_exists( 'ametex_import_pack_extract_package_demo' ) ) {
+if( ! function_exists( 'beplus_import_pack_extract_package_demo' ) ) {
     /**
-     * Extract (.zip) package demo 
-     * 
+     * Extract (.zip) package demo
+     *
      */
-    function ametex_import_pack_extract_package_demo() {
+    function beplus_import_pack_extract_package_demo() {
         global $Bears_Backup;
         extract( $_POST );
 
         $package_name = $data['package_name'];
-        $path_file_package = $data['path_file_package'];
+        $package = $data['package'];
+
+        $upload_dir = wp_upload_dir();
+        $path = $upload_dir['basedir'];
+        $path_file_package = $path . '/' . $package;
 
         $backup_path = $Bears_Backup->upload_path();
         $extract_to = $backup_path . '/' . sprintf( 'package-install__%s', $package_name );
@@ -205,16 +207,16 @@ if( ! function_exists( 'ametex_import_pack_extract_package_demo' ) ) {
         exit();
     }
 
-    add_action( 'wp_ajax_ametex_import_pack_extract_package_demo', 'ametex_import_pack_extract_package_demo' );
-    add_action( 'wp_ajax_nopriv_ametex_import_pack_extract_package_demo', 'ametex_import_pack_extract_package_demo' );
+    add_action( 'wp_ajax_beplus_import_pack_extract_package_demo', 'beplus_import_pack_extract_package_demo' );
+    add_action( 'wp_ajax_nopriv_beplus_import_pack_extract_package_demo', 'beplus_import_pack_extract_package_demo' );
 }
 
-if( ! function_exists( 'ametex_import_pack_restore_data' ) ) {
+if( ! function_exists( 'beplus_import_pack_restore_data' ) ) {
     /**
-     * Restore data 
-     * 
+     * Restore data
+     *
      */
-    function ametex_import_pack_restore_data() {
+    function beplus_import_pack_restore_data() {
         global $wp_filesystem;
         $package_path = $_POST['data']['package_path'];
 
@@ -223,14 +225,14 @@ if( ! function_exists( 'ametex_import_pack_restore_data' ) ) {
             WP_Filesystem();
         }
 
-        do_action( 'ametex/import_pack/before_restore_package', $package_path );
+        do_action( 'beplus/import_pack/before_restore_package', $package_path );
 
         $result = BBACKUP_Restore_Data( array(
             'name' => basename( $package_path ),
             'backup_path_file' => $package_path,
         ), '' );
 
-        do_action( 'ametex/import_pack/after_restore_package', $package_path, $result );
+        do_action( 'beplus/import_pack/after_restore_package', $package_path, $result );
 
         // delete package folder
         $wp_filesystem->delete( $package_path , true );
@@ -253,16 +255,16 @@ if( ! function_exists( 'ametex_import_pack_restore_data' ) ) {
         }
     }
 
-    add_action( 'wp_ajax_ametex_import_pack_restore_data', 'ametex_import_pack_restore_data' );
-    add_action( 'wp_ajax_nopriv_ametex_import_pack_restore_data', 'ametex_import_pack_restore_data' );
+    add_action( 'wp_ajax_beplus_import_pack_restore_data', 'beplus_import_pack_restore_data' );
+    add_action( 'wp_ajax_nopriv_beplus_import_pack_restore_data', 'beplus_import_pack_restore_data' );
 }
 
-if( ! function_exists( 'ametex_import_pack_backup_site_substep_install_bears_backup_plg' ) ) {
+if( ! function_exists( 'beplus_import_pack_backup_site_substep_install_bears_backup_plg' ) ) {
     /**
      * Backup site step install Bears Backup plugin
-     * 
+     *
      */
-    function ametex_import_pack_backup_site_substep_install_bears_backup_plg() {
+    function beplus_import_pack_backup_site_substep_install_bears_backup_plg() {
 
         // Install plugin Bears Backup
         $installer = false;
@@ -272,22 +274,22 @@ if( ! function_exists( 'ametex_import_pack_backup_site_substep_install_bears_bac
         ];
 
         if(! Import_Pack_Plugin_Installer_Helper::is_installed( $plugin )) {
-            
+
             $install_response = Import_Pack_Plugin_Installer_Helper::install( $plugin );
             if( $install_response['success'] == true ) {
                 // Install...
                 $installer = true;
-            } 
+            }
         } else {
             $installer = true;
         }
 
-        if( false == $installer ) { 
+        if( false == $installer ) {
             wp_send_json( [
                 'success' => true,
                 'result' => [
                     'status' => false,
-                    'message' => __( 'Install plugin Bears Backup fail!', 'ametex' ),
+                    'message' => __( 'Install plugin Bears Backup fail!', 'beplus' ),
                 ]
             ] );
 
@@ -296,13 +298,13 @@ if( ! function_exists( 'ametex_import_pack_backup_site_substep_install_bears_bac
 
         $active_response = Import_Pack_Plugin_Installer_Helper::activate( $plugin );
         $activate = false;
-        
+
         if( $active_response['success'] != true ) {
             wp_send_json( [
                 'success' => true,
                 'result' => [
                     'status' => false,
-                    'message' => __( 'Active plugin Bears Backup fail!', 'ametex' ),
+                    'message' => __( 'Active plugin Bears Backup fail!', 'beplus' ),
                 ]
             ] );
 
@@ -313,34 +315,34 @@ if( ! function_exists( 'ametex_import_pack_backup_site_substep_install_bears_bac
             'success' => true,
             'result' => [
                 'status' => true,
-                'message' => __( 'Install plugin Bears Backup successful.', 'ametex' ),
+                'message' => __( 'Install plugin Bears Backup successful.', 'beplus' ),
             ]
         ] );
 
         exit();
     }
 
-    add_action( 'wp_ajax_ametex_import_pack_backup_site_substep_install_bears_backup_plg', 'ametex_import_pack_backup_site_substep_install_bears_backup_plg' );
-    add_action( 'wp_ajax_nopriv_ametex_import_pack_backup_site_substep_install_bears_backup_plg', 'ametex_import_pack_backup_site_substep_install_bears_backup_plg' );
+    add_action( 'wp_ajax_beplus_import_pack_backup_site_substep_install_bears_backup_plg', 'beplus_import_pack_backup_site_substep_install_bears_backup_plg' );
+    add_action( 'wp_ajax_nopriv_beplus_import_pack_backup_site_substep_install_bears_backup_plg', 'beplus_import_pack_backup_site_substep_install_bears_backup_plg' );
 }
 
-if( ! function_exists( 'ametex_import_pack_backup_site_substep_backup_database' ) ) {
+if( ! function_exists( 'beplus_import_pack_backup_site_substep_backup_database' ) ) {
     /**
      * Backup site step backup database
-     * 
+     *
      */
-    function ametex_import_pack_backup_site_substep_backup_database() {
+    function beplus_import_pack_backup_site_substep_backup_database() {
 
         // bbackup_backup_database
         $result = BBACKUP_Backup_Database( [], '' );
 
         if( $result['success'] == true ) {
-            
+
             wp_send_json( [
                 'success' => true,
                 'result' => [
                     'status' => true,
-                    'message' => __( 'Backup database successful.', 'ametex' ),
+                    'message' => __( 'Backup database successful.', 'beplus' ),
                     'next_step_data' => $result,
                 ]
             ] );
@@ -349,32 +351,32 @@ if( ! function_exists( 'ametex_import_pack_backup_site_substep_backup_database' 
                 'success' => true,
                 'result' => [
                     'status' => false,
-                    'message' => __( 'Backup database fail!', 'ametex' ),
+                    'message' => __( 'Backup database fail!', 'beplus' ),
                 ]
             ] );
         }
     }
 
-    add_action( 'wp_ajax_ametex_import_pack_backup_site_substep_backup_database', 'ametex_import_pack_backup_site_substep_backup_database' );
-    add_action( 'wp_ajax_nopriv_ametex_import_pack_backup_site_substep_backup_database', 'ametex_import_pack_backup_site_substep_backup_database' );
+    add_action( 'wp_ajax_beplus_import_pack_backup_site_substep_backup_database', 'beplus_import_pack_backup_site_substep_backup_database' );
+    add_action( 'wp_ajax_nopriv_beplus_import_pack_backup_site_substep_backup_database', 'beplus_import_pack_backup_site_substep_backup_database' );
 }
 
-if( ! function_exists( 'ametex_import_pack_backup_site_substep_create_file_config' ) ) {
+if( ! function_exists( 'beplus_import_pack_backup_site_substep_create_file_config' ) ) {
     /**
      * Backup site step create file config
-     * 
+     *
      */
-    function ametex_import_pack_backup_site_substep_create_file_config() {
+    function beplus_import_pack_backup_site_substep_create_file_config() {
 
         $result = BBACKUP_Create_File_Config( $_POST['data']['next_step_data'], '' );
 
         if( $result['success'] == true ) {
-            
+
             wp_send_json( [
                 'success' => true,
                 'result' => [
                     'status' => true,
-                    'message' => __( 'Backup database successful.', 'ametex' ),
+                    'message' => __( 'Backup database successful.', 'beplus' ),
                     'next_step_data' => $result,
                 ]
             ] );
@@ -383,32 +385,32 @@ if( ! function_exists( 'ametex_import_pack_backup_site_substep_create_file_confi
                 'success' => true,
                 'result' => [
                     'status' => false,
-                    'message' => __( 'Backup database fail!', 'ametex' ),
+                    'message' => __( 'Backup database fail!', 'beplus' ),
                 ]
             ] );
         }
     }
 
-    add_action( 'wp_ajax_ametex_import_pack_backup_site_substep_create_file_config', 'ametex_import_pack_backup_site_substep_create_file_config' );
-    add_action( 'wp_ajax_nopriv_ametex_import_pack_backup_site_substep_create_file_config', 'ametex_import_pack_backup_site_substep_create_file_config' );
+    add_action( 'wp_ajax_beplus_import_pack_backup_site_substep_create_file_config', 'beplus_import_pack_backup_site_substep_create_file_config' );
+    add_action( 'wp_ajax_nopriv_beplus_import_pack_backup_site_substep_create_file_config', 'beplus_import_pack_backup_site_substep_create_file_config' );
 }
 
-if( ! function_exists( 'ametex_import_pack_backup_site_substep_backup_folder_upload' ) ) {
-    /** 
+if( ! function_exists( 'beplus_import_pack_backup_site_substep_backup_folder_upload' ) ) {
+    /**
      * Backup site step backup folder upload
-     * 
+     *
      */
-    function ametex_import_pack_backup_site_substep_backup_folder_upload() {
+    function beplus_import_pack_backup_site_substep_backup_folder_upload() {
 
         $result = BBACKUP_Backup_Folder_Upload( $_POST['data']['next_step_data'], '' );
 
         if( $result['success'] == true ) {
-            
+
             wp_send_json( [
                 'success' => true,
                 'result' => [
                     'status' => true,
-                    'message' => __( 'Backup folder upload successful.', 'ametex' ),
+                    'message' => __( 'Backup folder upload successful.', 'beplus' ),
                     'next_step_data' => $result,
                 ]
             ] );
@@ -417,12 +419,12 @@ if( ! function_exists( 'ametex_import_pack_backup_site_substep_backup_folder_upl
                 'success' => true,
                 'result' => [
                     'status' => false,
-                    'message' => __( 'Backup folder upload fail!', 'ametex' ),
+                    'message' => __( 'Backup folder upload fail!', 'beplus' ),
                 ]
             ] );
         }
     }
 
-    add_action( 'wp_ajax_ametex_import_pack_backup_site_substep_backup_folder_upload', 'ametex_import_pack_backup_site_substep_backup_folder_upload' );
-    add_action( 'wp_ajax_nopriv_ametex_import_pack_backup_site_substep_backup_folder_upload', 'ametex_import_pack_backup_site_substep_backup_folder_upload' );
+    add_action( 'wp_ajax_beplus_import_pack_backup_site_substep_backup_folder_upload', 'beplus_import_pack_backup_site_substep_backup_folder_upload' );
+    add_action( 'wp_ajax_nopriv_beplus_import_pack_backup_site_substep_backup_folder_upload', 'beplus_import_pack_backup_site_substep_backup_folder_upload' );
 }

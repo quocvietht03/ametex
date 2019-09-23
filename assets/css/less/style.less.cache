@@ -2896,7 +2896,10 @@ body {
 .bt-test-item2 .eael-testimonial-item .eael-testimonial-content {
   width:60%;
   padding-left:60px;
+<<<<<<< HEAD
   text-align:left;
+=======
+>>>>>>> 5d0fc9b872df75118845ff34b6c27326694a0e93
 }
 .bt-test-item2 .eael-testimonial-item .eael-testimonial-content .eael-testimonial-text { margin-bottom:30px; }
 .bt-test-item2 .eael-testimonial-item .eael-testimonial-content .eael-testimonial-user { margin-bottom:5px; }
@@ -2909,6 +2912,7 @@ body {
   }
   .bt-test-item2 .eael-testimonial-item .eael-testimonial-image { margin-bottom:20px; }
 }
+<<<<<<< HEAD
 .bt-test-item2.elementor-testimonial--layout-image_left .elementor-testimonial, .bt-test-item2.elementor-testimonial--layout-image_right .elementor-testimonial {
   max-width:960px;
   margin-left:auto;
@@ -2954,6 +2958,8 @@ body {
   .bt-test-item2.elementor-testimonial--layout-image_left .elementor-testimonial .elementor-testimonial__content, .bt-test-item2.elementor-testimonial--layout-image_right .elementor-testimonial .elementor-testimonial__content { text-align:center; }
   .bt-test-item2.elementor-testimonial--layout-image_left .elementor-testimonial .elementor-testimonial__footer, .bt-test-item2.elementor-testimonial--layout-image_right .elementor-testimonial .elementor-testimonial__footer { display:none; }
 }
+=======
+>>>>>>> 5d0fc9b872df75118845ff34b6c27326694a0e93
 .bt-team-item .eael-team-item-inner {
   font-size:0;
   letter-spacing:0;
@@ -2963,7 +2969,10 @@ body {
   vertical-align:middle;
   width:40%;
 }
+<<<<<<< HEAD
 .bt-team-item .eael-team-item-inner .eael-team-image>figure img { height:auto; }
+=======
+>>>>>>> 5d0fc9b872df75118845ff34b6c27326694a0e93
 .bt-team-item .eael-team-item-inner .eael-team-content { width:60%; }
 .bt-team-item .eael-team-item .eael-team-member-position { margin-bottom:15px; }
 .bt-price-feat.elementor-widget-price-table .elementor-widget-container:before {
@@ -3117,6 +3126,7 @@ body {
   opacity:0;
   z-index:5;
 }
+<<<<<<< HEAD
 .bt-acticle-template1 {
   background:#ffffff;
   overflow:hidden;
@@ -3138,6 +3148,8 @@ body {
 }
 .bt-acticle-template1 .elementor-element-172f577 .elementor-icon-list-text, .bt-acticle-template1 .elementor-element-172f577 .elementor-icon-list-text a { color:#fa7a60; }
 .bt-acticle-template1 .elementor-element-172f577 .elementor-icon-list-item { font-size:15px; }
+=======
+>>>>>>> 5d0fc9b872df75118845ff34b6c27326694a0e93
 @media (min-width: 1025px) {
   .bt-acticle-template2 .elementor-column:first-child .elementor-column-wrap .elementor-widget-wrap { height:100%; }
   .bt-acticle-template2 .elementor-column:first-child .elementor-column-wrap .elementor-widget-wrap:before {
@@ -3352,4 +3364,8 @@ body {
   font-family:'font1204858589';
   content:"\E817";
 }
+<<<<<<< HEAD
 ";s:5:"files";a:17:{s:85:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/style.less";i:1566615545;s:89:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/variables.less";i:1566615545;s:86:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/mixins.less";i:1566615545;s:89:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/animation.less";i:1566615545;s:100:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/component/typography.less";i:1566615545;s:95:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/component/color.less";i:1566615545;s:95:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/component/input.less";i:1566615545;s:96:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/component/button.less";i:1566615545;s:94:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/component/util.less";i:1566615545;s:94:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/component/unit.less";i:1566615545;s:94:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/modules/header.less";i:1566615545;s:96:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/modules/titlebar.less";i:1566615545;s:94:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/modules/footer.less";i:1566615545;s:92:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/modules/blog.less";i:1566615545;s:95:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/modules/element.less";i:1566615545;s:84:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/main.less";i:1566615545;s:86:"/home/bepluspr/public_html/ametex/wp-content/themes/ametex/assets/css/less/custom.less";i:1566615545;}s:7:"updated";i:1566871658;}
+=======
+";s:5:"files";a:17:{s:74:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\style.less";i:1560483094;s:78:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\variables.less";i:1560483094;s:75:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\mixins.less";i:1560483094;s:78:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\animation.less";i:1560483094;s:89:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\component\typography.less";i:1560368670;s:84:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\component\color.less";i:1560368670;s:84:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\component\input.less";i:1560368670;s:85:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\component\button.less";i:1560368670;s:83:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\component\util.less";i:1560368670;s:83:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\component\unit.less";i:1560483094;s:83:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\modules\header.less";i:1560483094;s:85:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\modules\titlebar.less";i:1560483094;s:83:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\modules\footer.less";i:1560483094;s:81:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\modules\blog.less";i:1560483094;s:84:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\modules\element.less";i:1560483094;s:73:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\main.less";i:1560483094;s:75:"C:\xampp\htdocs\ametex\wp-content\themes\ametex\assets\css\less\custom.less";i:1560483094;}s:7:"updated";i:1560821729;}
+>>>>>>> 5d0fc9b872df75118845ff34b6c27326694a0e93

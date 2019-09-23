@@ -1,9 +1,9 @@
-<?php 
+<?php
 /**
  * Import pack class install helpers
- * 
- * @package Ametex 
- * @author Beplus 
+ *
+ * @package Import Pack
+ * @author Beplus
  */
 
 if ( ! class_exists( 'WP_Upgrader' ) ) {
@@ -11,9 +11,9 @@ if ( ! class_exists( 'WP_Upgrader' ) ) {
 }
 
 class Import_Pack_Installer_Helper {
-    
+
     public static function download_and_install_a_package( $package, $destination, $hook_extra = array(), $folder = false ) {
-        
+
         if ( ! class_exists( 'WP_Upgrader' ) ) {
 			require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
         }
@@ -24,7 +24,7 @@ class Import_Pack_Installer_Helper {
             require_once (ABSPATH . '/wp-admin/includes/file.php');
             WP_Filesystem();
         }
-        
+
 		@set_time_limit( 60 * 10 );
 		/**
 		 * @var WP_Upgrader $upgrader
@@ -32,7 +32,7 @@ class Import_Pack_Installer_Helper {
 		$upgrader = new WP_Upgrader( new Import_Pack_Auto_Install_Upgrader_Skin() );
 		$upgrader->generic_strings();
         $download = $upgrader->download_package( $package );
-        
+
 		if ( is_wp_error( $download ) ) {
 			return array(
 				'success' => false,
@@ -41,10 +41,10 @@ class Import_Pack_Installer_Helper {
 				)
 			);
         }
-        
+
 		//Unzips the file into a temporary directory
         $working_dir = $upgrader->unpack_package( $download, true );
-        
+
 		if ( is_wp_error( $working_dir ) ) {
 			return array(
 				'success' => false,
@@ -53,20 +53,20 @@ class Import_Pack_Installer_Helper {
 				)
 			);
         }
-        
+
 		if ( $folder ) {
 			/**
 			 * @var WP_Filesystem_Base $wp_filesystem
 			 */
             global $wp_filesystem;
-            
+
 			$upgrade_folder = $wp_filesystem->wp_content_dir() . 'upgrade/';
 			$source         = $upgrade_folder . $folder;
 			if ( $wp_filesystem->move( $working_dir, $source, true ) ) {
 				$working_dir = $source;
 			};
         }
-        
+
 		if ( is_wp_error( $working_dir ) ) {
 			return array(
 				'success' => false,
@@ -75,7 +75,7 @@ class Import_Pack_Installer_Helper {
 				)
 			);
         }
-        
+
 		$result = $upgrader->install_package( array(
 			'source'                      => $working_dir,
 			'destination'                 => $destination,
@@ -84,7 +84,7 @@ class Import_Pack_Installer_Helper {
 			'clear_working'               => true,
 			'hook_extra'                  => $hook_extra
         ) );
-        
+
 		return array(
 			'success' => true,
 			'data'    => array(
@@ -95,7 +95,7 @@ class Import_Pack_Installer_Helper {
 }
 
 class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
-    
+
     /**
 	 * Install multiple plugin in sa me time.
 	 *
@@ -111,7 +111,7 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 		}
 		return $status;
     }
-    
+
 	/**
 	 * Install plugin
 	 *
@@ -121,7 +121,7 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 	 * @return array
 	 */
 	public static function install( $plugin, $force = false ) {
-        
+
 		return self::is_installed( $plugin ) && ! $force
 			? array(
 				'success' => true,
@@ -131,11 +131,11 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 			)
 			: self::process_package( $plugin, 'install' );
     }
-    
+
 	public static function process_package( $plugin, $action ) {
         @set_time_limit( 60 * 5 );
-        
-		$download = self::get_link($plugin); 
+
+		$download = self::get_link($plugin);
 		if ( is_wp_error( $download ) ) {
 			return array(
 				'success' => false,
@@ -144,15 +144,15 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 				)
 			);
         }
-        
+
 		return self::download_and_install_a_package( $download, WP_PLUGIN_DIR, array(
 			'type'   => 'plugin',
 			'action' => $action
 		) );
     }
-    
+
 	public static function activate( $plugin ) {
-      
+
 		if ( ! self::is_installed( $plugin ) ) {
 			return array(
 				'success' => false,
@@ -161,15 +161,15 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 				)
 			);
         }
-        
+
 		if ( self::is_active( $plugin ) ) {
 			return array(
 				'success' => true,
 			);
         }
-        
+
 		$activate = activate_plugin( self::get_name( $plugin['slug'] ), $redirect = '' , $network_wide = false, $silent = true );
-		
+
 		if ( is_wp_error( $activate ) ) {
 			return array(
 				'success' => false,
@@ -182,7 +182,7 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 			'success' => true
 		);
     }
-    
+
 	public static function bulk_activate( $plugins ) {
 
 		if ( ! current_user_can( 'activate_plugins' ) ) {
@@ -192,13 +192,13 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 		}
 		$status = array();
 		wp_clean_plugins_cache( false );
-		
+
 		foreach ( $plugins as $plugin ) {
 			$status[ $plugin['slug'] ]['activate'] = self::activate( $plugin );
 		}
 		return $status;
     }
-    
+
 	private static function api( $action, $args = null ) {
 
 		if ( is_array( $args ) ) {
@@ -207,7 +207,7 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 		if ( ! isset( $args->per_page ) ) {
 			$args->per_page = 24;
         }
-        
+
 		$args = apply_filters( 'plugins_api_args', $args, $action );
 		$res  = apply_filters( 'plugins_api', false, $action, $args );
 		if ( false === $res ) {
@@ -233,12 +233,12 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 		} elseif ( ! is_wp_error( $res ) ) {
 			$res->external = true;
         }
-        
+
 		return apply_filters( 'plugins_api_result', $res, $action, $args );
 	}
 	/**
 	 * Return plugin path name with plugin file
-     * 
+     *
 	 * @param $slug
 	 * @return null|string
 	 */
@@ -248,7 +248,7 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 		if ( empty( $data ) ) {
 			return null;
 		}
-		
+
 		$file = array_keys( $data );
 		$file = array_filter($file, function($f) {
 			$explode_data = explode('/', $f);
@@ -257,7 +257,7 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 
 		return $slug . '/' . $file[0];
     }
-    
+
 	/**
 	 * Return the plugin data in case the plugin is active,
 	 * in other case returns null
@@ -270,7 +270,7 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 		$data = get_plugins( "/$slug" );
 		return empty($data) ? null : array_shift($data);
     }
-    
+
 	/**
 	 * Check if the plugin is installed
 	 *
@@ -281,7 +281,7 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 	public static function is_installed( $plugin ) {
 		return ! ( self::get_data( $plugin['slug'] ) === null );
     }
-    
+
 	/**
 	 * Checks is the plugin is active
 	 *
@@ -294,14 +294,14 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 		if ( ! function_exists( 'is_plugin_active' ) ) {
 			get_template_part( ABSPATH . 'wp-admin/includes/plugin.php' );
 		}
-		
+
 		if( function_exists('import_pack_check_plugin_is_active') ) {
 			return ! self::is_installed( $plugin ) ? false : import_pack_check_plugin_is_active( self::get_name( $plugin['slug'] ) );
 		} else {
 			return true;
 		}
     }
-    
+
 	public static function get_link( $plugin ) {
 		if ( isset( $plugin['source'] ) ) {
 			return $plugin['source'];

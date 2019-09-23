@@ -33,7 +33,7 @@ $cobbles_total = count($cobbles);
 					<?php require get_template_directory() . '/framework/elements/portfolio/'.$settings['grid_layout'].'-'.$settings['cobbles_skin'].'.php'; ?>
 				</div>
 			<?php $count++; if($count >= $cobbles_total){$count = 0;} } ?>
-			
+
 		</div>
 	</div>
 </div>
