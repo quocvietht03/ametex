@@ -25,7 +25,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 	public function get_categories() {
 		return [ 'bears-category' ];
 	}
-	
+
 	protected function register_layout_design_control() {
 		$this->start_controls_section(
 			'section_layout_design',
@@ -34,7 +34,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'slidesPerView',
 			[
@@ -53,7 +53,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'spaceBetween',
 			[
@@ -65,7 +65,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => 30,
 			]
 		);
-		
+
 		$this->add_control(
 			'loop',
 			[
@@ -74,7 +74,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => '',
 			]
 		);
-		
+
 		$this->add_control(
 			'speed',
 			[
@@ -86,7 +86,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => 300,
 			]
 		);
-		
+
 		$this->add_control(
 			'autoplay',
 			[
@@ -95,7 +95,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => '',
 			]
 		);
-		
+
 		$this->add_control(
 			'grabCursor',
 			[
@@ -104,7 +104,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => '',
 			]
 		);
-		
+
 		$this->add_control(
 			'navigation',
 			[
@@ -113,7 +113,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => '',
 			]
 		);
-		
+
 		$this->add_control(
 			'navigationLeftIcon',
 			[
@@ -125,7 +125,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'navigationRightIcon',
 			[
@@ -137,7 +137,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination',
 			[
@@ -146,7 +146,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => '',
 			]
 		);
-		
+
 		$this->add_control(
 			'paginationClickable',
 			[
@@ -158,10 +158,10 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function register_post_design_control() {
 		$this->start_controls_section(
 			'section_post_design',
@@ -170,7 +170,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		
+
 		$this->add_control(
 			'skin',
 			[
@@ -183,7 +183,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => 'default',
 			]
 		);
-		
+
 		$this->add_control(
 			'thumbnail_type',
 			[
@@ -197,7 +197,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'prefix_class' => 'bt-posts--thumbnail-',
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Image_Size::get_type(),
 			[
@@ -205,7 +205,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => 'medium',
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'thumbnail_ratio',
 			[
@@ -269,7 +269,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'show_title',
 			[
@@ -278,7 +278,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => 'yes',
 			]
 		);
-		
+
 		$this->add_control(
 			'show_position',
 			[
@@ -287,7 +287,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => 'yes',
 			]
 		);
-		
+
 		$this->add_control(
 			'show_social',
 			[
@@ -296,7 +296,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => 'yes',
 			]
 		);
-		
+
 		$this->add_control(
 			'show_read_more',
 			[
@@ -316,7 +316,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'read_more_icon',
 			[
@@ -328,10 +328,10 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function term_option_value() {
 		$terms = get_terms('bt_team_category', 'orderby=count&hide_empty=0');
 		$term_val = array();
@@ -342,7 +342,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
         }
 		return $term_val;
 	}
-	
+
 	protected function register_query_design_control() {
 		$this->start_controls_section(
 			'section_query_design',
@@ -351,7 +351,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		
+
 		$this->add_control(
 			'posts_per_page',
 			[
@@ -360,7 +360,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => 6,
 			]
 		);
-		
+
 		$this->add_control(
 			'category',
 			[
@@ -371,7 +371,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => '',
 			]
 		);
-		
+
 		$this->add_control(
 			'post_ids',
 			[
@@ -382,7 +382,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter post IDs', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'orderby',
 			[
@@ -397,7 +397,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => 'date',
 			]
 		);
-		
+
 		$this->add_control(
 			'order',
 			[
@@ -410,10 +410,10 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'default' => 'DESC',
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function register_layout_style_control() {
 		$this->start_controls_section(
 			'section_layout_style',
@@ -431,7 +431,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->add_control(
 			'navigation_size',
 			[
@@ -453,7 +453,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'navigation_padding',
 			[
@@ -471,7 +471,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'navigation_border_width',
 			[
@@ -489,7 +489,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'navigation_border_radius',
 			[
@@ -507,7 +507,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'navigation_spacing',
 			[
@@ -527,7 +527,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'navigation_effects_tabs' );
 
 		$this->start_controls_tab( 'navigation_style_normal',
@@ -535,7 +535,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'label' => __( 'Normal', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'navigation_color',
 			[
@@ -556,7 +556,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'navigation_border_color',
 			[
@@ -567,7 +567,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
@@ -575,15 +575,15 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .swiper-button-prev, {{WRAPPER}} .swiper-button-next',
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->start_controls_tab( 'navigation_style_hover',
 			[
 				'label' => __( 'Hover', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'navigation_color_hover',
 			[
@@ -604,7 +604,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'navigation_border_color_hover',
 			[
@@ -615,7 +615,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
@@ -623,11 +623,11 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .swiper-button-prev:hover, {{WRAPPER}} .swiper-button-next:hover',
 			]
 		);
-		
+
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
-		
+
 		$this->add_control(
 			'pagination_style',
 			[
@@ -636,7 +636,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_alignment',
 			[
@@ -660,7 +660,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'prefix_class' => 'bt-pagination--align-',
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_size',
 			[
@@ -682,7 +682,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_border_radius',
 			[
@@ -700,7 +700,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'pagination_spacing',
 			[
@@ -719,7 +719,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'pagination_effects_tabs' );
 
 		$this->start_controls_tab( 'pagination_style_normal',
@@ -727,7 +727,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'label' => __( 'Normal', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_color',
 			[
@@ -738,15 +738,15 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->start_controls_tab( 'pagination_style_hover',
 			[
 				'label' => __( 'Hover', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_color_hover',
 			[
@@ -757,15 +757,15 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->start_controls_tab( 'pagination_style_active',
 			[
 				'label' => __( 'Active', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_color_active',
 			[
@@ -776,14 +776,14 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function register_post_style_control() {
 		$this->start_controls_section(
 			'section_post_layout_style',
@@ -792,7 +792,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		
+
 		$this->add_control(
 			'post_alignment',
 			[
@@ -816,7 +816,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'prefix_class' => 'bt-post--align-',
 			]
 		);
-		
+
 		$this->add_control(
 			'post_border_width',
 			[
@@ -870,7 +870,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'post_effects_tabs' );
 
 		$this->start_controls_tab( 'post_style_normal',
@@ -950,10 +950,10 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
-		
+
 		$this->end_controls_section();
-		
-		
+
+
 		$this->start_controls_section(
 			'section_post_header_style',
 			[
@@ -961,7 +961,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		
+
 		$this->add_control(
 			'post_header_spacing',
 			[
@@ -980,7 +980,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'post_image_style',
 			[
@@ -989,7 +989,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->add_control(
 			'post_img_border_radius',
 			[
@@ -1001,7 +1001,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'post_thumbnail_effects_tabs' );
 
 		$this->start_controls_tab( 'normal',
@@ -1037,7 +1037,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
-		
+
 		$this->add_control(
 			'post_overlay_style',
 			[
@@ -1047,10 +1047,10 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			]
 		);
 		//overlay options
-		
+
 		$this->end_controls_section();
-		
-		
+
+
 		$this->start_controls_section(
 			'section_post_content_style',
 			[
@@ -1058,7 +1058,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'post_content_padding',
 			[
@@ -1076,7 +1076,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'post_title_style',
 			[
@@ -1085,7 +1085,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -1094,7 +1094,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .elementor-post__title, {{WRAPPER}} .elementor-post__title a',
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'post_title_spacing',
 			[
@@ -1113,7 +1113,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'post_title_effects_tabs' );
 
 		$this->start_controls_tab( 'post_title_normal',
@@ -1121,7 +1121,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'label' => __( 'Normal', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'post_title_color',
 			[
@@ -1136,15 +1136,15 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->start_controls_tab( 'post_title_hover',
 			[
 				'label' => __( 'Hover', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'post_title_color_hover',
 			[
@@ -1159,11 +1159,11 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->end_controls_tabs();
-		
+
 		$this->add_control(
 			'post_position_style',
 			[
@@ -1172,8 +1172,8 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
-		
+
+
 		$this->add_control(
 			'post_position_color',
 			[
@@ -1197,7 +1197,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-post__position',
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'post_position_spacing',
 			[
@@ -1216,7 +1216,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'post_socials_style',
 			[
@@ -1225,7 +1225,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->add_control(
 			'post_socials_size',
 			[
@@ -1247,7 +1247,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'post_socials_padding',
 			[
@@ -1265,7 +1265,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'post_socials_border_width',
 			[
@@ -1301,7 +1301,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'post_social_space_between',
 			[
@@ -1320,7 +1320,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'post_social_spacing',
 			[
@@ -1339,7 +1339,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'post_socials_effects_tabs' );
 
 		$this->start_controls_tab( 'post_socials_normal',
@@ -1362,7 +1362,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'post_socials_background_color',
 			[
@@ -1373,7 +1373,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'post_socials_border_color',
 			[
@@ -1384,7 +1384,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
@@ -1415,7 +1415,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'post_socials_background_color_hover',
 			[
@@ -1426,7 +1426,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'post_socials_border_color_hover',
 			[
@@ -1437,7 +1437,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
@@ -1449,7 +1449,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
-		
+
 		$this->add_control(
 			'post_readmore_style',
 			[
@@ -1458,7 +1458,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'post_readmore_effects_tabs' );
 
 		$this->start_controls_tab( 'post_readmore_normal',
@@ -1466,7 +1466,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'label' => __( 'Normal', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'post_readmore_color',
 			[
@@ -1481,15 +1481,15 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->start_controls_tab( 'post_readmore_hover',
 			[
 				'label' => __( 'Hover', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'post_readmore_color_hover',
 			[
@@ -1504,11 +1504,11 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->end_controls_tabs();
-		
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -1517,22 +1517,22 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-post__readmore',
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function _register_controls() {
 		$this->register_layout_design_control();
 		$this->register_post_design_control();
 		$this->register_query_design_control();
-		
+
 		$this->register_layout_style_control();
 		$this->register_post_style_control();
 	}
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		
+
 		$data_setings = array(
 			'slidesPerView' => $settings['slidesPerView'],
 			'spaceBetween' => $settings['spaceBetween'],
@@ -1551,14 +1551,14 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			'autoplay' => $settings['autoplay'],
 			'grabCursor' => $settings['grabCursor'],
 		);
-		
+
 		if( !empty( $settings['navigation'] ) ) {
 			$data_setings['navigation'] = array(
 				'nextEl' => '.swiper-button-next',
 				'prevEl' => '.swiper-button-prev',
 			);
 		}
-		
+
 		if( !empty( $settings['pagination'] ) ) {
 			$data_setings['pagination'] = array(
 				'el' => '.swiper-pagination',
@@ -1566,28 +1566,28 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 				'clickable' => $settings['paginationClickable'],
 			);
 		}
-		
-		
-		
+
+
+
 		$json_carousel = json_encode($data_setings);
-		
+
 		$this->add_render_attribute(
 			'wrapper',
 			[
 				'class' => [ 'elementor-element', 'elementor-widget', 'bt-team-carousel' ],
 			]
 		);
-		
+
 		$this->add_render_attribute(
 			'container',
 			[
 				'class' => [ 'elementor-posts-container', 'elementor-posts', 'elementor-carousel', 'bt-post--skin-'.$settings['skin'] ],
 			]
 		);
-		
-		
+
+
 		$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-		
+
 		$args = array(
 			'posts_per_page' => $settings['posts_per_page'],
 			'paged' => $paged,
@@ -1613,9 +1613,9 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			$args['post__in'] = $p_ids;
 		}
 		$wp_query = new WP_Query($args);
-		
+
 		if ( $wp_query->have_posts() ) {
-		
+
 		?>
 			<div <?php echo ''.$this->get_render_attribute_string( 'wrapper' ); ?>>
 				<div <?php echo ''.$this->get_render_attribute_string( 'container' ); ?>>
@@ -1629,7 +1629,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 								</div>
 							<?php } ?>
 						</div>
-						
+
 						<?php if( !empty( $settings['pagination'] ) ) { ?>
 							<div class="swiper-pagination bt-swiper__pagination"></div>
 						<?php } ?>
@@ -1642,7 +1642,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 								<?php if( !empty( $settings['navigationRightIcon'] ) ) echo '<i class="'.$settings['navigationRightIcon'].'"></i>'; ?>
 							</div>
 						<?php } ?>
-						
+
 					</div>
 				</div>
 			</div>
@@ -1661,3 +1661,5 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 		wp_reset_postdata();
 	}
 }
+
+\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor_btTeamCarousel_Widget() );

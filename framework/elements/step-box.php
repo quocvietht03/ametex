@@ -20,7 +20,7 @@ class Elementor_btStepBox_Widget extends Widget_Base {
 	public function get_categories() {
 		return [ 'bears-category' ];
 	}
-	
+
 	protected function _register_controls() {
 		$this->start_controls_section(
 			'content_section',
@@ -31,7 +31,7 @@ class Elementor_btStepBox_Widget extends Widget_Base {
 		);
 
 		$repeater = new Repeater();
-		
+
 		$repeater->add_control(
 			'list_number', [
 				'label' => __( 'Number', 'ametex' ),
@@ -39,7 +39,7 @@ class Elementor_btStepBox_Widget extends Widget_Base {
 				'default' => __( 'List Number' , 'ametex' ),
 			]
 		);
-		
+
 		$repeater->add_control(
 			'list_title', [
 				'label' => __( 'Title', 'ametex' ),
@@ -88,7 +88,7 @@ class Elementor_btStepBox_Widget extends Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		
+
 		$this->add_render_attribute(
 			'wrapper',
 			[
@@ -101,7 +101,7 @@ class Elementor_btStepBox_Widget extends Widget_Base {
 				'class' => [ 'elementor-posts-container', 'elementor-posts', 'elementor-step-box' ],
 			]
 		);
-		
+
 		?>
 			<div <?php echo ''.$this->get_render_attribute_string( 'wrapper' ); ?>>
 				<div <?php echo ''.$this->get_render_attribute_string( 'container' ); ?>>
@@ -123,3 +123,5 @@ class Elementor_btStepBox_Widget extends Widget_Base {
 	}
 
 }
+
+\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor_btStepBox_Widget() );

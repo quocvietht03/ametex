@@ -1,6 +1,6 @@
 === Ametex ===
 Theme Name: Ametex
-Theme URI: http://beplusthemes.com/theme/ametex/
+Theme URI: http://bearsthemespremium.com/theme/ametex/
 Author: bearsthemes
 Author URI: http://bearsthemes.com
 License: GNU General Public License v2 or later

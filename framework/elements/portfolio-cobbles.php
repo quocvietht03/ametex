@@ -25,7 +25,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 	public function get_categories() {
 		return [ 'bears-category' ];
 	}
-	
+
 	protected function register_layout_design_control() {
 		$this->start_controls_section(
 			'section_layout_design',
@@ -34,7 +34,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		
+
 		$this->add_control(
 			'heading_icon',
 			[
@@ -43,7 +43,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => 'fa fa-codiepie',
 			]
 		);
-		
+
 		$this->add_control(
 			'heading_title',
 			[
@@ -52,7 +52,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => __( 'Case Studies', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'heading_description',
 			[
@@ -62,7 +62,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => __( 'Are you looking for ways to increase conversions but having a hard time turning visits into sales?', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'heading_btn_label',
 			[
@@ -71,7 +71,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => __( 'Schedule a call', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'heading_btn_link',
 			[
@@ -83,10 +83,10 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function register_post_design_control() {
 		$this->start_controls_section(
 			'section_post_design',
@@ -95,7 +95,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		
+
 		$this->add_control(
 			'skin',
 			[
@@ -108,7 +108,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => 'default',
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Image_Size::get_type(),
 			[
@@ -116,7 +116,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => 'medium',
 			]
 		);
-		
+
 		$this->add_control(
 			'show_lightbox',
 			[
@@ -125,7 +125,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => 'yes',
 			]
 		);
-		
+
 		$this->add_control(
 			'show_title',
 			[
@@ -134,7 +134,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => 'yes',
 			]
 		);
-		
+
 		$this->add_control(
 			'show_category',
 			[
@@ -143,10 +143,10 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => 'yes',
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function term_option_value() {
 		$terms = get_terms('bt_portfolio_category', 'orderby=count&hide_empty=0');
 		$term_val = array();
@@ -157,7 +157,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
         }
 		return $term_val;
 	}
-	
+
 	protected function register_query_design_control() {
 		$this->start_controls_section(
 			'section_query_design',
@@ -166,7 +166,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		
+
 		$this->add_control(
 			'posts_per_page',
 			[
@@ -175,7 +175,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => 6,
 			]
 		);
-		
+
 		$this->add_control(
 			'category',
 			[
@@ -186,7 +186,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => '',
 			]
 		);
-		
+
 		$this->add_control(
 			'post_ids',
 			[
@@ -197,7 +197,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter post IDs', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'orderby',
 			[
@@ -212,7 +212,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => 'date',
 			]
 		);
-		
+
 		$this->add_control(
 			'order',
 			[
@@ -225,10 +225,10 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'default' => 'DESC',
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function register_layout_style_control() {
 		$this->start_controls_section(
 			'section_layout_style',
@@ -237,8 +237,8 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		
-		
+
+
 
 		$this->add_control(
 			'heading_icon_style',
@@ -248,8 +248,8 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
-		
+
+
 		$this->add_control(
 			'heading_title_style',
 			[
@@ -258,8 +258,8 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
-		
+
+
 		$this->add_control(
 			'heading_description_style',
 			[
@@ -268,8 +268,8 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
-		
+
+
 		$this->add_control(
 			'heading_button_style',
 			[
@@ -278,11 +278,11 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
-		
+
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function register_post_style_control() {
 		$this->start_controls_section(
 			'section_post_layout_style',
@@ -291,7 +291,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		
+
 		$this->add_control(
 			'post_title_style',
 			[
@@ -300,8 +300,8 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
-		
+
+
 		$this->add_control(
 			'post_category_style',
 			[
@@ -310,8 +310,8 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
-		
+
+
 		$this->add_control(
 			'post_lightbox_style',
 			[
@@ -320,8 +320,8 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
-		
+
+
 		$this->add_control(
 			'post_overlay_style',
 			[
@@ -331,41 +331,41 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 			]
 		);
 		//overlay options
-		
-		
+
+
 		$this->end_controls_section();
-		
+
 	}
-	
+
 	protected function _register_controls() {
 		$this->register_layout_design_control();
 		$this->register_post_design_control();
 		$this->register_query_design_control();
-		
+
 		//$this->register_layout_style_control();
 		//$this->register_post_style_control();
 	}
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		
+
 		$this->add_render_attribute(
 			'wrapper',
 			[
 				'class' => [ 'elementor-element', 'elementor-widget', 'bt-portfolio-cobbles' ],
 			]
 		);
-		
+
 		$this->add_render_attribute(
 			'container',
 			[
 				'class' => [ 'elementor-posts-container', 'elementor-posts', 'elementor-cobbles', 'bt-post--skin-'.$settings['skin'] ],
 			]
 		);
-		
-		
+
+
 		$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-		
+
 		$args = array(
 			'posts_per_page' => $settings['posts_per_page'],
 			'paged' => $paged,
@@ -391,11 +391,11 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 			$args['post__in'] = $p_ids;
 		}
 		$wp_query = new WP_Query($args);
-		
+
 		wp_enqueue_script('isotope-pkgd-min');
-		
+
 		if ( $wp_query->have_posts() ) {
-		
+
 		?>
 			<div <?php echo ''.$this->get_render_attribute_string( 'wrapper' ); ?>>
 				<div <?php echo ''.$this->get_render_attribute_string( 'container' ); ?>>
@@ -407,37 +407,37 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 									if( !empty( $settings['heading_icon'] ) ) {
 										echo '<div class="bt-icon"><i class="'.$settings['heading_icon'].'"></i></div>';
 									}
-									
+
 									if( !empty( $settings['heading_title'] ) ) {
 										echo '<h3 class="bt-title">'.$settings['heading_title'].'</h3>';
 									}
-									
+
 									if( !empty( $settings['heading_description'] ) ) {
 										echo '<div class="bt-description">'.$settings['heading_description'].'</div>';
 									}
-									
+
 									if( !empty( $settings['heading_btn_label'] ) ) {
 										echo '<a href="'.$settings['heading_btn_link'].'" class="bt-btn-link">'.$settings['heading_btn_label'].'</a>';
 									}
 								?>
-								
-								
-								
-								
+
+
+
+
 							</div>
 						</div>
 						<?php while ( $wp_query->have_posts() ) { $wp_query->the_post(); ?>
 							<?php
 								$thumbnail_attr = wp_get_attachment_image_src( get_post_thumbnail_id(), $settings['thumbnail_size_size'] );
 								$lightbox_attr = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-								
+
 							?>
 							<div class="grid-item">
 								<article <?php post_class('bt-post__item'); ?> style="background-image:url(<?php echo esc_url($thumbnail_attr[0]); ?>); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 									<div class="bt-post__overlay">
 										<?php if( !empty( $settings['show_lightbox'] ) ) echo '<a data-elementor-open-lightbox="default" data-elementor-lightbox-slideshow="'.$this->get_id().'" href="'.$lightbox_attr[0].'" class="bt-post__lightbox elementor-clickable"><i class="fa fa-search"></i></a>'; ?>
 										<div class="bt-post__content">
-											<?php 
+											<?php
 												if( !empty( $settings['show_title'] ) ) {
 													echo '<h3 class="bt-post__title"><a class="bt-post__link" href="'.get_the_permalink().'">'.get_the_title().'</a></h3>';
 												}
@@ -450,7 +450,7 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 								</article>
 							</div>
 						<?php } ?>
-						
+
 					</div>
 				</div>
 			</div>
@@ -475,3 +475,5 @@ class Elementor_btPortfolioCobbles_Widget extends Widget_Base {
 		wp_reset_postdata();
 	}
 }
+
+\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor_btPortfolioCobbles_Widget() );
