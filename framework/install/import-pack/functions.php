@@ -36,8 +36,9 @@ if( ! function_exists( 'beplus_import_pack_path_to_url' ) ) {
 
         define( 'IMPORT_THEMENAME', apply_filters( 'beplus/import_pack/themename', 'Ametex' ) );
         define( 'IMPORT_URI', apply_filters( 'beplus/import_pack/import_uri', beplus_import_pack_path_to_url() ) );
-        define( 'IMPORT_REMOTE_SERVER', apply_filters( 'beplus/import_pack/import_remote_server', 'http://bearsthemespremium.com/install/demo/ametex/' ) );
-        define( 'IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD', apply_filters( 'beplus/import_pack/import_remote_server_plugin_download', 'http://bearsthemespremium.com/install/plugin/' ) );
+        define( 'IMPORT_REMOTE_SERVER', apply_filters( 'beplus/import_pack/import_remote_server', 'http://beplusthemes.com/install/demo/ametex/' ) );
+        // define( 'IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD', apply_filters( 'beplus/import_pack/import_remote_server_plugin_download', 'http://beplusthemes.com/install/plugin/' ) );
+        define( 'IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD', 'http://beplusthemes.com/install/plugin/' );
         define( 'IMPORT_URL_OPEN_TICKET', apply_filters( 'beplus/import_pack/import_url_open_ticket', 'https://bearsthemes.ticksy.com' ) );
     }
 }
@@ -395,8 +396,8 @@ if( ! function_exists( 'beplus_import_pack_backup_site_skip_func' ) ) {
         $installer = false;
         $plugin = [
             'slug' => 'bears-backup',
-            'source' => IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD . '/bears-backup.zip',
-        ];
+            'source' => IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD . 'bears-backup.zip',
+        ]; 
 
         if(! Import_Pack_Plugin_Installer_Helper::is_installed( $plugin )) {
 

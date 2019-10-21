@@ -10,7 +10,7 @@ if (!class_exists('BearsthemesCommunicator')):
   class BearsthemesCommunicator{
     var $baseUrl;
     var $message;
-    function __construct($baseUrl='https://bearsthemespremium.com/help') {
+    function __construct($baseUrl='https://beplusthemes.com/help') {
         $this->baseUrl = $baseUrl;
     }
 
@@ -411,7 +411,7 @@ class VerifyTheme {
     {
         printf(
             '%s<br />%s<a target="_blank" href="%s">%s</a>.</small>',
-            esc_html__('Themeforest provides purchase code for each theme you buy, and you’ll need it to verify and register your product (and to receive theme support).','verifytheme'),esc_html__('To download your purchase code, simply follow these steps at ','verifytheme'), esc_url('//bearsthemespremium.com/product-registration/'), esc_html__('here','verifytheme')
+            esc_html__('Themeforest provides purchase code for each theme you buy, and you’ll need it to verify and register your product (and to receive theme support).','verifytheme'),esc_html__('To download your purchase code, simply follow these steps at ','verifytheme'), esc_url('//beplusthemes.com/product-registration/'), esc_html__('here','verifytheme')
         );
     }
     /**
@@ -421,7 +421,7 @@ class VerifyTheme {
     {
         printf(
             '<input type="text" id="purchase_code" required name="verifytheme_settings[purchase_code]" value="%s" /><br /><small>%s<a target="_blank" href="%s">%s</a>.</small>',
-            isset( $this->options['purchase_code'] ) ? esc_attr( $this->options['purchase_code']) : '', esc_html__('Please insert your Envato purchase code. ','verifytheme'), esc_url('//bearsthemespremium.com/product-registration/'), esc_html__('More info','verifytheme')
+            isset( $this->options['purchase_code'] ) ? esc_attr( $this->options['purchase_code']) : '', esc_html__('Please insert your Envato purchase code. ','verifytheme'), esc_url('//beplusthemes.com/product-registration/'), esc_html__('More info','verifytheme')
         );
     }
 }
