@@ -30,7 +30,7 @@ if (!function_exists('ametex_enqueue_scripts')) {
 		global $ametex_options;
 
 		wp_enqueue_style('ametex-fonts', ametex_fonts_url(), false );
-		
+
 		/* Bootstrap */
 		wp_enqueue_style('bootstrap', get_template_directory_uri().'/assets/vendors/bootstrap/css/bootstrap.min.css', array(), false);
 		wp_enqueue_script('bootstrap', get_template_directory_uri().'/assets/vendors/bootstrap/js/bootstrap.min.js', array('jquery'), '', true);
@@ -51,16 +51,20 @@ if (!function_exists('ametex_enqueue_scripts')) {
 		wp_enqueue_style( 'ametex-style', get_template_directory_uri().'/style.css',  array(), false );
 		wp_enqueue_script( 'ametex-main', get_template_directory_uri().'/assets/js/main.js', array('jquery'), '', true);
 
-		
+
 		// Load options to script
 		$mobile_width = 991;
-	
+
 		$js_options = array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
 			'enable_mobile' => $mobile_width
 		);
 		wp_localize_script( 'ametex-main', 'option_ob', $js_options );
 		wp_enqueue_script( 'ametex-main' );
+
+		if ( is_singular() && comments_open() && ( get_option( 'thread_comments' ) == 1 ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 
 	}
 	add_action( 'wp_enqueue_scripts', 'ametex_enqueue_scripts' );
@@ -86,5 +90,5 @@ require_once get_template_directory().'/framework/templates/post-functions.php';
 require_once get_template_directory().'/framework/includes.php';
 
 /* Elements function */
-require_once get_template_directory().'/framework/elements/elements.php';
+require_once get_template_directory().'/framework/elements/register-elements.php';
 

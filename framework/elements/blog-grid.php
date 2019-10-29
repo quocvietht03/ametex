@@ -25,7 +25,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 	public function get_categories() {
 		return [ 'bears-category' ];
 	}
-	
+
 	protected function register_layout_design_control() {
 		$this->start_controls_section(
 			'section_layout_design',
@@ -34,7 +34,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'columns',
 			[
@@ -55,7 +55,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'frontend_available' => true,
 			]
 		);
-		
+
 		$this->add_control(
 			'show_pagination',
 			[
@@ -67,7 +67,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->add_control(
 			'show_prev_next',
 			[
@@ -79,10 +79,10 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'condition' => [
 					'show_pagination!' => '',
 				],
-				
+
 			]
 		);
-		
+
 		$this->add_control(
 			'prev_icon',
 			[
@@ -95,7 +95,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'prev_text',
 			[
@@ -108,7 +108,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'next_icon',
 			[
@@ -121,7 +121,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'next_text',
 			[
@@ -134,10 +134,10 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function register_post_design_control() {
 		$this->start_controls_section(
 			'section_post_design',
@@ -146,7 +146,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		
+
 		$this->add_control(
 			'skin',
 			[
@@ -159,7 +159,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'default' => 'default',
 			]
 		);
-		
+
 		$this->add_control(
 			'thumbnail_type',
 			[
@@ -173,7 +173,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'prefix_class' => 'bt-posts--thumbnail-',
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Image_Size::get_type(),
 			[
@@ -181,7 +181,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'default' => 'medium',
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'thumbnail_ratio',
 			[
@@ -245,7 +245,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'show_title',
 			[
@@ -254,7 +254,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'default' => 'yes',
 			]
 		);
-		
+
 		$this->add_control(
 			'show_meta',
 			[
@@ -263,7 +263,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'default' => 'yes',
 			]
 		);
-		
+
 		$this->add_control(
 			'show_excerpt',
 			[
@@ -272,7 +272,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'default' => 'yes',
 			]
 		);
-		
+
 		$this->add_control(
 			'excerpt_length',
 			[
@@ -284,7 +284,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'excerpt_more',
 			[
@@ -296,7 +296,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'show_read_more',
 			[
@@ -305,7 +305,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'default' => 'yes',
 			]
 		);
-		
+
 		$this->add_control(
 			'read_more_text',
 			[
@@ -317,7 +317,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'read_more_icon',
 			[
@@ -329,10 +329,10 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function term_option_value() {
 		$terms = get_terms('category', 'orderby=count&hide_empty=0');
 		$term_val = array();
@@ -343,7 +343,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
         }
 		return $term_val;
 	}
-	
+
 	protected function register_query_design_control() {
 		$this->start_controls_section(
 			'section_query_design',
@@ -352,7 +352,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		
+
 		$this->add_control(
 			'posts_per_page',
 			[
@@ -361,7 +361,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'default' => 6,
 			]
 		);
-		
+
 		$this->add_control(
 			'category',
 			[
@@ -372,7 +372,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'default' => '',
 			]
 		);
-		
+
 		$this->add_control(
 			'post_ids',
 			[
@@ -383,7 +383,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter post IDs', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'orderby',
 			[
@@ -398,7 +398,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'default' => 'date',
 			]
 		);
-		
+
 		$this->add_control(
 			'order',
 			[
@@ -411,10 +411,10 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'default' => 'DESC',
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function register_layout_style_control() {
 		$this->start_controls_section(
 			'section_design_style',
@@ -464,7 +464,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_style',
 			[
@@ -473,7 +473,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_alignment',
 			[
@@ -497,7 +497,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'prefix_class' => 'bt-pagination--align-',
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -506,7 +506,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-elementor__pagination .page-numbers',
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_size',
 			[
@@ -528,7 +528,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_padding',
 			[
@@ -546,7 +546,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_border_width',
 			[
@@ -564,7 +564,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_border_radius',
 			[
@@ -582,7 +582,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'pagination_space_between',
 			[
@@ -602,7 +602,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'pagination_spacing',
 			[
@@ -622,7 +622,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'pagination_effects_tabs' );
 
 		$this->start_controls_tab( 'pagination_style_normal',
@@ -630,7 +630,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'label' => __( 'Normal', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_color',
 			[
@@ -651,7 +651,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_border_color',
 			[
@@ -662,7 +662,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
@@ -670,15 +670,15 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-elementor__pagination .page-numbers',
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->start_controls_tab( 'pagination_style_hover',
 			[
 				'label' => __( 'Hover', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_color_hover',
 			[
@@ -699,7 +699,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'npagination_border_color_hover',
 			[
@@ -710,7 +710,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
@@ -718,15 +718,15 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-elementor__pagination .page-numbers:hover',
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->start_controls_tab( 'pagination_style_active',
 			[
 				'label' => __( 'Active', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'pagination_color_active',
 			[
@@ -747,7 +747,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'npagination_border_color_active',
 			[
@@ -758,7 +758,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
@@ -766,14 +766,14 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-elementor__pagination .page-numbers.current',
 			]
 		);
-		
+
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function register_post_style_control() {
 		$this->start_controls_section(
 			'section_post_layout_style',
@@ -782,7 +782,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		
+
 		$this->add_control(
 			'post_alignment',
 			[
@@ -806,7 +806,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'prefix_class' => 'bt-post--align-',
 			]
 		);
-		
+
 		$this->add_control(
 			'post_border_width',
 			[
@@ -860,7 +860,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'post_effects_tabs' );
 
 		$this->start_controls_tab( 'post_style_normal',
@@ -940,10 +940,10 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
-		
+
 		$this->end_controls_section();
-		
-		
+
+
 		$this->start_controls_section(
 			'section_post_header_style',
 			[
@@ -951,7 +951,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		
+
 		$this->add_control(
 			'post_header_spacing',
 			[
@@ -967,7 +967,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'post_image_style',
 			[
@@ -976,7 +976,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->add_control(
 			'post_img_border_radius',
 			[
@@ -988,7 +988,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'post_thumbnail_effects_tabs' );
 
 		$this->start_controls_tab( 'normal',
@@ -1024,7 +1024,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
-		
+
 		$this->add_control(
 			'post_overlay_style',
 			[
@@ -1034,10 +1034,10 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 			]
 		);
 		//overlay options
-		
+
 		$this->end_controls_section();
-		
-		
+
+
 		$this->start_controls_section(
 			'section_post_content_style',
 			[
@@ -1045,7 +1045,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'post_content_padding',
 			[
@@ -1063,7 +1063,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'post_title_style',
 			[
@@ -1072,7 +1072,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -1081,7 +1081,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .elementor-post__title, {{WRAPPER}} .elementor-post__title a',
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'post_title_spacing',
 			[
@@ -1100,7 +1100,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'post_title_effects_tabs' );
 
 		$this->start_controls_tab( 'post_title_normal',
@@ -1108,7 +1108,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'label' => __( 'Normal', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'post_title_color',
 			[
@@ -1123,15 +1123,15 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->start_controls_tab( 'post_title_hover',
 			[
 				'label' => __( 'Hover', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'post_title_color_hover',
 			[
@@ -1146,11 +1146,11 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->end_controls_tabs();
-		
+
 		$this->add_control(
 			'post_meta_style',
 			[
@@ -1159,7 +1159,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -1168,7 +1168,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-post__meta',
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'post_meta_space_between',
 			[
@@ -1188,7 +1188,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'post_meta_spacing',
 			[
@@ -1207,7 +1207,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'post_meta_effects_tabs' );
 
 		$this->start_controls_tab( 'post_meta_normal',
@@ -1215,7 +1215,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'label' => __( 'Normal', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'post_meta_color',
 			[
@@ -1231,15 +1231,15 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->start_controls_tab( 'post_meta_hover',
 			[
 				'label' => __( 'Hover', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'post_meta_color_hover',
 			[
@@ -1254,11 +1254,11 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->end_controls_tabs();
-		
+
 		$this->add_control(
 			'post_excerpt_style',
 			[
@@ -1267,7 +1267,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->add_control(
 			'post_excerpt_color',
 			[
@@ -1291,7 +1291,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-post__excerpt',
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'post_excerpt_spacing',
 			[
@@ -1310,7 +1310,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'post_readmore_style',
 			[
@@ -1319,7 +1319,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->start_controls_tabs( 'post_readmore_effects_tabs' );
 
 		$this->start_controls_tab( 'post_readmore_normal',
@@ -1327,7 +1327,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'label' => __( 'Normal', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'post_readmore_color',
 			[
@@ -1342,15 +1342,15 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->start_controls_tab( 'post_readmore_hover',
 			[
 				'label' => __( 'Hover', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'post_readmore_color_hover',
 			[
@@ -1365,11 +1365,11 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_tab();
-		
+
 		$this->end_controls_tabs();
-		
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -1378,22 +1378,22 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-post__readmore',
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function _register_controls() {
 		$this->register_layout_design_control();
 		$this->register_post_design_control();
 		$this->register_query_design_control();
-		
+
 		$this->register_layout_style_control();
 		$this->register_post_style_control();
 	}
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		
+
 		$this->add_render_attribute(
 			'wrapper',
 			[
@@ -1406,9 +1406,9 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 				'class' => [ 'elementor-posts-container', 'elementor-posts', 'elementor-grid', 'bt-post--skin-'.$settings['skin'] ],
 			]
 		);
-		
+
 		$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-		
+
 		$args = array(
 			'posts_per_page' => $settings['posts_per_page'],
 			'paged' => $paged,
@@ -1434,9 +1434,9 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 			$args['post__in'] = $p_ids;
 		}
 		$wp_query = new WP_Query($args);
-		
+
 		if ( $wp_query->have_posts() ) {
-			
+
 		?>
 			<div <?php echo ''.$this->get_render_attribute_string( 'wrapper' ); ?>>
 				<div <?php echo ''.$this->get_render_attribute_string( 'container' ); ?>>
@@ -1452,7 +1452,7 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 							$prev_text .= !empty($settings['prev_text']) ? ' '.$settings['prev_text'] : '';
 							$next_text = !empty($settings['next_text']) ? $settings['next_text'].' ' : '';
 							$next_text .= !empty($settings['next_icon']) ? '<i class="'.$settings['next_icon'].'"></i>' : '';
-							
+
 							$big = 999999999; // need an unlikely integer
 							echo paginate_links( array(
 								'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -1476,3 +1476,5 @@ class Elementor_btBlogGrid_Widget extends Widget_Base {
 	}
 
 }
+
+\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor_btBlogGrid_Widget() );

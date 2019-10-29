@@ -12,6 +12,15 @@ use Elementor\Widget_Base;
 
 class Elementor_btPortfolioFilter extends Widget_Base {
 
+	/**
+	 * Elementor_btPortfolioFilter constructor.
+	 */
+	public function __construct($data = [], $args = null) {
+		parent::__construct( $data, $args );
+		// Register Widget Scripts
+		wp_register_script( 'isotope-pkgd-min', get_template_directory_uri() . '/framework/elements/js/isotope.pkgd.min.js', array( 'jquery' ), '', true );
+	}
+
 	public function get_name() {
 		return 'bt_portfolio_filter';
 	}
@@ -475,3 +484,4 @@ class Elementor_btPortfolioFilter extends Widget_Base {
 		return ' ' . implode( ' ', $cat_filter_for_post ) . ' ' . $custom_class;
 	}
 }
+\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor_btPortfolioFilter() );

@@ -400,7 +400,7 @@ class Elementor_btTestimonialSlider_Widget extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'bt_testimonial_image_max_width', [
-			'label'      => esc_html__( 'Image Max Width', 'ametex' ),
+			'label'      => esc_html__( 'Image Wrap Max Width', 'ametex' ),
 			'type'       => Controls_Manager::SLIDER,
 			'default'    => [
 				'size' => 25,
@@ -418,17 +418,13 @@ class Elementor_btTestimonialSlider_Widget extends Widget_Base {
 			],
 			'size_units' => [ '%', 'px' ],
 			'selectors'  => [
-				'{{WRAPPER}} .bt-testimonial-image' => 'max-width:{{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .bt-testimonial-image' => 'max-width:{{SIZE}}{{UNIT}};width:{{SIZE}}{{UNIT}};',
 			],
 		] );
 
 		$this->add_responsive_control( 'bt_testimonial_image_width', [
 			'label'      => esc_html__( 'Image Width', 'ametex' ),
 			'type'       => Controls_Manager::SLIDER,
-			'default'    => [
-				'size' => 150,
-				'unit' => 'px',
-			],
 			'range'      => [
 				'%'  => [
 					'min' => 0,
@@ -444,7 +440,6 @@ class Elementor_btTestimonialSlider_Widget extends Widget_Base {
 				'{{WRAPPER}} .bt-testimonial-image img' => 'width:{{SIZE}}{{UNIT}};',
 			],
 		] );
-
 
 		$this->add_responsive_control( 'bt_testimonial_image_margin', [
 			'label'      => esc_html__( 'Margin', 'ametex' ),
@@ -464,7 +459,6 @@ class Elementor_btTestimonialSlider_Widget extends Widget_Base {
 			],
 		] );
 
-
 		$this->add_group_control( Group_Control_Border::get_type(), [
 			'name'     => 'bt_testimonial_image_border',
 			'label'    => esc_html__( 'Border', 'ametex' ),
@@ -477,7 +471,6 @@ class Elementor_btTestimonialSlider_Widget extends Widget_Base {
 			'return_value' => 'testimonial-avatar-rounded',
 			'default'      => '',
 		] );
-
 
 		$this->add_control( 'bt_testimonial_image_border_radius', [
 			'label'     => esc_html__( 'Border Radius', 'ametex' ),
@@ -1487,3 +1480,4 @@ class Elementor_btTestimonialSlider_Widget extends Widget_Base {
 	protected function content_template() {
 	}
 }
+\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor_btTestimonialSlider_Widget() );

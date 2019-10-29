@@ -1,0 +1,166 @@
+.elementor-widget-bt_portfolio_cobbles {
+    .grid {
+        background: #fafafa;
+
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+
+    .grid-item, .grid-sizer {
+        width: 25%;
+
+        &.grid-item--width2 {
+            width: 50%;
+        }
+    }
+
+    .grid-item {
+        float: left;
+        height: 600px;
+    }
+
+    .bt-grid__heading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        max-width: 560px;
+        height: auto;
+        padding: 15px;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+
+        .bt-icon {
+            font-size: 90px;
+            margin-bottom: 20px;
+        }
+
+        .bt-title {
+            font-size: 45px;
+            font-weight: 700;
+            line-height: 60px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .bt-description {
+            font-size: 18px;
+            line-height: 30px;
+            margin-bottom: 30px;
+        }
+
+        .bt-btn-link {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 22px;
+            color: #ffffff;
+            background: linear-gradient(120deg, var(--apack-color-accent) 0%, #f47c54 100%);
+            border-radius: 30px 30px 30px 30px;
+            padding: 15px 35px 15px 35px;
+
+            &:hover {
+                background: linear-gradient(120deg, #f47c54 0%, var(--apack-color-accent) 100%);
+            }
+        }
+    }
+
+    .bt-post__item {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .bt-post__overlay {
+            transition: .4s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(244, 124, 84, 0.9) 0%, var(--apack-color-accent-opacity-90, rgba(228, 85, 93, 0.9)) 100%);
+            opacity: 0;
+
+            .bt-post__lightbox {
+                position: absolute;
+                top: 40px;
+                left: 40px;
+                width: 88px;
+                height: 88px;
+                font-size: 18px;
+                line-height: 88px;
+                text-align: center;
+                color: #ffffff;
+                background: rgba(255, 255, 255, 0.2);
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+
+                &:hover {
+                    color: var(--apack-color-accent);
+                    background: #ffffff;
+                }
+            }
+
+            .bt-post__content {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 40px;
+
+                .bt-post__title {
+                    margin-bottom: 10px;
+
+                    .bt-post__link {
+                        font-size: 32px;
+                        font-weight: 700;
+                        line-height: 40px;
+                        color: #ffffff;
+                    }
+                }
+
+                .bt-post__category {
+                    font-size: 15px;
+                    font-weight: 700;
+                    line-height: 26px;
+                    text-transform: uppercase;
+                    color: #ffffff;
+
+                    a {
+                        font-weight: 400;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .bt-post__overlay {
+                opacity: 1;
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        .grid-item, .grid-sizer {
+            width: 50%;
+
+            &.grid-item--width2 {
+                width: 100%;
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        .grid-item, .grid-sizer {
+            width: 100%;
+
+            &.grid-item--width2 {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -274,7 +274,6 @@
     };
 
     jQuery(window).on("elementor/frontend/init", function () {
-        console.log('testimonial init')
         elementorFrontend.hooks.addAction(
             "frontend/element_ready/bt-testimonial-slider.default",
             BtTestimonialSliderHandler

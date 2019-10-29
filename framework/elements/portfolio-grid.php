@@ -25,7 +25,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 	public function get_categories() {
 		return [ 'bears-category' ];
 	}
-	
+
 	protected function register_layout_design_control() {
 		$this->start_controls_section(
 			'section_layout_design',
@@ -34,7 +34,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		
+
 		$this->add_control(
 			'grid_layout',
 			[
@@ -48,7 +48,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'grid_columns',
 			[
@@ -71,7 +71,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'grid_space_between',
 			[
@@ -94,7 +94,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'columns',
 			[
@@ -116,7 +116,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'space_between',
 			[
@@ -136,7 +136,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_group_control(
 			Group_Control_Image_Size::get_type(),
 			[
@@ -144,7 +144,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				'default' => 'medium',
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'thumbnail_ratio',
 			[
@@ -174,7 +174,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'thumbnail_height',
 			[
@@ -194,7 +194,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'grid_skin',
 			[
@@ -210,7 +210,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'masonry_skin',
 			[
@@ -226,7 +226,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'cobbles_skin',
 			[
@@ -242,7 +242,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'cobbles_pattern',
 			[
@@ -254,7 +254,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'show_pagination',
 			[
@@ -266,7 +266,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
-		
+
 		$this->add_control(
 			'show_prev_next',
 			[
@@ -278,10 +278,10 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				'condition' => [
 					'show_pagination!' => '',
 				],
-				
+
 			]
 		);
-		
+
 		$this->add_control(
 			'prev_icon',
 			[
@@ -294,7 +294,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'prev_text',
 			[
@@ -307,7 +307,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'next_icon',
 			[
@@ -320,7 +320,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'next_text',
 			[
@@ -333,10 +333,10 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function term_option_value() {
 		$terms = get_terms('bt_portfolio_category', 'orderby=count&hide_empty=0');
 		$term_val = array();
@@ -347,7 +347,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
         }
 		return $term_val;
 	}
-	
+
 	protected function register_query_design_control() {
 		$this->start_controls_section(
 			'section_query_design',
@@ -356,7 +356,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		
+
 		$this->add_control(
 			'posts_per_page',
 			[
@@ -365,7 +365,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				'default' => 6,
 			]
 		);
-		
+
 		$this->add_control(
 			'category',
 			[
@@ -376,7 +376,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				'default' => '',
 			]
 		);
-		
+
 		$this->add_control(
 			'post_ids',
 			[
@@ -387,7 +387,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter post IDs', 'ametex' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'orderby',
 			[
@@ -402,7 +402,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				'default' => 'date',
 			]
 		);
-		
+
 		$this->add_control(
 			'order',
 			[
@@ -415,10 +415,10 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 				'default' => 'DESC',
 			]
 		);
-		
+
 		$this->end_controls_section();
 	}
-	
+
 	protected function _register_controls() {
 		$this->register_layout_design_control();
 		$this->register_query_design_control();
@@ -426,9 +426,9 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		
+
 		$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-		
+
 		$args = array(
 			'posts_per_page' => $settings['posts_per_page'],
 			'paged' => $paged,
@@ -454,7 +454,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 			$args['post__in'] = $p_ids;
 		}
 		$wp_query = new WP_Query($args);
-		
+
 		wp_enqueue_script('isotope-pkgd-min');
 		?>
 		<script>
@@ -483,7 +483,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 		<?php
 		if ( $wp_query->have_posts() ) {
 			require get_template_directory() . '/framework/elements/portfolio/'.$settings['grid_layout'].'.php';
-				
+
 			if( !empty ($settings['show_pagination']) && $wp_query->max_num_pages > 1 ) {
 				?>
 				<nav class="elementor-pagination bt-elementor__pagination" role="navigation">
@@ -493,7 +493,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 						$prev_text .= !empty($settings['prev_text']) ? ' '.$settings['prev_text'] : '';
 						$next_text = !empty($settings['next_text']) ? $settings['next_text'].' ' : '';
 						$next_text .= !empty($settings['next_icon']) ? '<i class="'.$settings['next_icon'].'"></i>' : '';
-						
+
 						$big = 999999999; // need an unlikely integer
 						echo paginate_links( array(
 							'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -506,7 +506,7 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 						) );
 					?>
 				</nav>
-				<?php 
+				<?php
 			}
 		} else {
 			esc_html_e('Post not found!', 'ametex');
@@ -514,3 +514,5 @@ class Elementor_btPortfolioGrid_Widget extends Widget_Base {
 		wp_reset_postdata();
 	}
 }
+
+\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor_btPortfolioGrid_Widget() );

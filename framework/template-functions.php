@@ -1,6 +1,7 @@
 <?php
-if ( ! isset( $content_width ) ) $content_width = 900;
-if ( is_singular() ) wp_enqueue_script( "comment-reply" );
+if ( ! isset( $content_width ) ) {
+	$content_width = 900;
+}
 
 if ( ! function_exists( 'ametex_setup' ) ) {
 	function ametex_setup() {
@@ -9,7 +10,7 @@ if ( ! function_exists( 'ametex_setup' ) ) {
 
 		/* Add custom logo */
 		add_theme_support( 'custom-logo' );
-		
+
 		/* Add custom header */
 		add_theme_support('custom-header');
 
@@ -56,7 +57,7 @@ if ( ! function_exists( 'ametex_setup' ) ) {
 
 		/* Add support for portfolio. */
 		add_post_type_support( 'fw-portfolio', array('excerpt') );
-		
+
 	}
 }
 add_action( 'after_setup_theme', 'ametex_setup' );
@@ -100,7 +101,7 @@ if ( ! function_exists( 'ametex_titlebar' ) ) {
 			<div class="bt-titlebar-inner">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-lg-8 col-lg-offset-2">
 							<h1 class="bt-page-title"><?php echo ametex_page_title(); ?></h1>
 							<div class="bt-breadcrumb"><?php echo ametex_page_breadcrumb('Home', '-'); ?></div>
 						</div>
@@ -206,7 +207,7 @@ if (!function_exists('ametex_page_title')) {
 		} else {
 			the_title();
 		}
-		
+
 		return ob_get_clean();
     }
 }
@@ -215,7 +216,7 @@ if (!function_exists('ametex_page_title')) {
 if (!function_exists('ametex_page_breadcrumb')) {
     function ametex_page_breadcrumb($home_text = 'Home', $delimiter = '-') {
 		global $post;
-		
+
 		if(is_front_page()){
 			echo esc_html('Front Page', 'ametex');
 		}elseif(is_home()){
@@ -359,7 +360,7 @@ if ( ! function_exists( 'ametex_paginate_links' ) ) {
 		$pagination_style = (isset($ametex_options['pagination_style'])&&$ametex_options['pagination_style'])?'bt-style'.$ametex_options['nav_dots_style']:'bt-style0';
 		$prev_text = (isset($ametex_options['pagination_prev_text'])&&$ametex_options['pagination_prev_text'])?'<span>'.$ametex_options['pagination_prev_text'].'</span>':'';
 		$next_text = (isset($ametex_options['pagination_next_text'])&&$ametex_options['pagination_next_text'])?'<span>'.$ametex_options['pagination_next_text'].'</span>':'';
-		
+
 		?>
 		<nav class="bt-pagination <?php echo esc_attr($pagination_style); ?>" role="navigation">
 			<?php
@@ -402,7 +403,7 @@ if ( ! function_exists( 'ametex_paging_nav' ) ) {
 
 		?>
 		<nav class="bt-pagination" role="navigation">
-			<?php 
+			<?php
 				echo paginate_links( array(
 					'base'     => $pagenum_link,
 					'format'   => $format,
@@ -412,7 +413,7 @@ if ( ! function_exists( 'ametex_paging_nav' ) ) {
 					'add_args' => array_map( 'urlencode', $query_args ),
 					'prev_text' => '<i class="fa fa-angle-left"></i>',
 					'next_text' => '<i class="fa fa-angle-right"></i>',
-				) ); 
+				) );
 			?>
 		</nav>
 		<?php
@@ -446,7 +447,7 @@ if(!function_exists('ametex_add_content_before_header_func')) {
 if(!function_exists('ametex_add_extra_code_wp_footer')) {
 	function ametex_add_extra_code_wp_footer() {
 		global $ametex_options;
-		
+
 		/* Back to top */
 		$back_to_top = (isset($ametex_options['back_to_top'])&&$ametex_options['back_to_top'])?$ametex_options['back_to_top']: false;
 		$back_to_top_style = (isset($ametex_options['back_to_top_style'])&&$ametex_options['back_to_top_style'])?$ametex_options['back_to_top_style']: 'style_1';
@@ -459,3 +460,36 @@ if(!function_exists('ametex_add_extra_code_wp_footer')) {
 	add_action( 'wp_footer', 'ametex_add_extra_code_wp_footer' );
 }
 
+function ametex_hex2rgb( $colour, $str = true) {
+	if ( $colour[0] == '#' ) {
+		$colour = substr( $colour, 1 );
+	}
+	if ( strlen( $colour ) == 6 ) {
+		list( $r, $g, $b ) = array( $colour[0] . $colour[1], $colour[2] . $colour[3], $colour[4] . $colour[5] );
+	} elseif ( strlen( $colour ) == 3 ) {
+		list( $r, $g, $b ) = array( $colour[0] . $colour[0], $colour[1] . $colour[1], $colour[2] . $colour[2] );
+	} else {
+		return false;
+	}
+	$r = hexdec( $r );
+	$g = hexdec( $g );
+	$b = hexdec( $b );
+	if ( $str ) {
+		return esc_html( $r . ',' . $g . ',' . $b );
+	}
+
+	return array( 'red' => $r, 'green' => $g, 'blue' => $b );
+}
+
+function ametex_hex2apack_variable_color( $name_variable, $colour, $a = 1 ) {
+	$rgb_str = ametex_hex2rgb( $colour );
+	if ( ! $name_variable || ! $colour ) {
+		return false;
+	}
+	$data = array(
+		'name'  => '--' . $name_variable,
+		'value' => 'rgba(' . $rgb_str . ',' . $a . ')'
+	);
+
+	return $data;
+}
