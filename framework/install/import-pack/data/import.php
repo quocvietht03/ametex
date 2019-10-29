@@ -16,8 +16,13 @@ $plugin_includes = [
         'slug' => 'custom-post-type-ui',
     ],
     [
-        'name' => esc_html__('Yoast SEO', 'beplus'),
-        'slug' => 'wordpress-seo',
+        'name' => esc_html__('Ametex Pack - addon for Ametex theme', 'beplus'),
+        'slug' => 'ametex-pack',
+        'source' => IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD . 'ametex-pack.zip',
+    ],
+    [
+        'name' => esc_html__('Easy Lightbox', 'beplus'),
+        'slug' => 'easy-lightbox-wp',
     ],
     [
         'name' => esc_html__('Slider Revolution', 'beplus'),
@@ -50,17 +55,13 @@ $plugin_includes = [
         'name' => esc_html__('Sticky Header Effects for Elementor', 'beplus'),
         'slug' => 'sticky-header-effects-for-elementor',
     ],
-    [
-        'name' => esc_html__('Custom Icons for Elementor', 'beplus'),
-        'slug' => 'custom-icons-for-elementor',
-    ],
 ];
 
 return apply_filters( 'beplus/import_pack/package_demo', [
     [
         'package_name' => 'ametex-main',
         'preview' => IMPORT_URI . '/images/ametex-main-preview.jpg', // image size 680x475
-        'url_demo' => 'https://bearsthemespremium.com/theme/ametex/', 
+        'url_demo' => 'https://beplusthemes.com/theme/ametex/', 
         'title' => __( 'Ametex Main', 'beplus' ),
         'description' => __( 'Ametex main demo, include 5 home demos & full inner page (Contact, About, Company, blog, etc.).' ),
         'plugins' => $plugin_includes,
