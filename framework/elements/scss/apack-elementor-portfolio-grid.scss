@@ -335,7 +335,7 @@
                         margin-bottom: 0;
 
                         a {
-                            color: #4d3484;
+                            color: var(--apack-color-primary);
 
                             &:hover {
                                 color: var(--apack-color-accent);
@@ -348,7 +348,7 @@
                         line-height: 26px;
 
                         a {
-                            color: #716886;
+                            color:  var(--apack-color-secondary);
 
                             &:hover {
                                 color: var(--apack-color-accent);
@@ -429,7 +429,7 @@
                         margin-bottom: 0;
 
                         a {
-                            color: #4d3484;
+                            color: var(--apack-color-primary);
 
                             &:hover {
                                 color: var(--apack-color-accent);
@@ -442,7 +442,7 @@
                         line-height: 26px;
 
                         a {
-                            color: #716886;
+                            color:  var(--apack-color-secondary);
 
                             &:hover {
                                 color: var(--apack-color-accent);

@@ -377,7 +377,7 @@
                         line-height: 26px;
 
                         a {
-                            color: #716886;
+                            color: var(--apack-color-secondary);
 
                             &:hover {
                                 color: var(--apack-color-accent);
@@ -460,7 +460,7 @@
                             color: white;
 
                             &:hover {
-                                color: var(--apack-color-primary, #4d3484);
+                                color: var(--apack-color-primary);
                             }
                         }
                     }
@@ -474,7 +474,7 @@
                             color: inherit;
 
                             &:hover {
-                                color: var(--apack-color-primary, #4d3484);
+                                color: var(--apack-color-primary);
                             }
                         }
                     }
@@ -570,7 +570,7 @@
                         line-height: 26px;
 
                         a {
-                            color: #716886;
+                            color:  var(--apack-color-secondary);
 
                             &:hover {
                                 color: var(--apack-color-accent);
