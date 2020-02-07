@@ -60,12 +60,12 @@
             text-transform: uppercase;
             line-height: 22px;
             color: #ffffff;
-            background: linear-gradient(120deg, var(--apack-color-accent) 0%, #f47c54 100%);
+            background: linear-gradient(120deg, var(--apack-color-accent) 0%, #e4555d 100%);
             border-radius: 30px 30px 30px 30px;
             padding: 15px 35px 15px 35px;
 
             &:hover {
-                background: linear-gradient(120deg, #f47c54 0%, var(--apack-color-accent) 100%);
+                background: linear-gradient(120deg, #e4555d 0%, var(--apack-color-accent) 100%);
             }
         }
     }
