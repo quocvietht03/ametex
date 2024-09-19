@@ -1534,16 +1534,16 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$data_setings = array(
-			'slidesPerView' => $settings['slidesPerView'],
+			'slidesPerView' => 1,
 			'spaceBetween' => $settings['spaceBetween'],
 			'breakpoints' => array(
-				'767' => array(
-					'slidesPerView' => $settings['slidesPerView_mobile'],
-					'spaceBetween' => $settings['spaceBetween_mobile'],
+				'411' => array(  
+					'slidesPerView' => 2, 
+					'spaceBetween' => isset($settings['spaceBetween_mobile']) ? $settings['spaceBetween_mobile'] : $settings['spaceBetween'],
 				),
-				'1024' => array(
-					'slidesPerView' => $settings['slidesPerView_tablet'],
-					'spaceBetween' => $settings['spaceBetween_tablet'],
+				'850' => array( 
+					'slidesPerView' => $settings['slidesPerView'], 
+					'spaceBetween' => isset($settings['spaceBetween_tablet']) ? $settings['spaceBetween_tablet'] : $settings['spaceBetween'],
 				),
 			),
 			'loop' => $settings['loop'],
