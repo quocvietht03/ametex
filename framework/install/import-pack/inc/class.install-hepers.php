@@ -315,7 +315,7 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 }
 
 class Import_Pack_Auto_Install_Upgrader_Skin extends WP_Upgrader_Skin {
-	public function feedback( $string ) {
+	public function feedback($string, ...$args) {
 		return;
 	}
 }

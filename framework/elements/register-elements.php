@@ -15,10 +15,8 @@ function ametex_add_elementor_widget_categories( $elements_manager ) {
 
 add_action( 'elementor/elements/categories_registered', 'ametex_add_elementor_widget_categories' );
 
-add_filter( 'apack/css_variables/font', function ( $data ) {
-	return $data;
-} );
-
+//add_filter( 'apack/css_variables/font', function ( $data ) {
+//} );
 add_filter( 'apack/css_variables/color', function ( $data ) {
 	//		var_dump( $data );
 
@@ -28,7 +26,6 @@ add_filter( 'apack/css_variables/color', function ( $data ) {
 	$apack_color_accent_rbg    = ametex_hex2rgb( $data['apack-color-accent']['value'] );
 	//	var_dump($apack_color_accent_rbg);
 
-	$data['apack-color-accent-opacity-23'] = ametex_hex2apack_variable_color( 'apack-color-accent-opacity-23', $data['apack-color-accent']['value'], '.23' );
 	$data['apack-color-accent-opacity-25'] = ametex_hex2apack_variable_color( 'apack-color-accent-opacity-25', $data['apack-color-accent']['value'], '.25' );
 	$data['apack-color-accent-opacity-90'] = ametex_hex2apack_variable_color( 'apack-color-accent-opacity-90', $data['apack-color-accent']['value'], '.9' );
 

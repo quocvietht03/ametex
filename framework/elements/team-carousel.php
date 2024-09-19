@@ -1090,7 +1090,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'post_title_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				//'scheme' => Scheme_Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .elementor-post__title, {{WRAPPER}} .elementor-post__title a',
 			]
 		);
@@ -1127,10 +1127,10 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'ametex' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_2,
-				],
+				// 'scheme' => [
+				// 	'type' => Scheme_Color::get_type(),
+				// 	'value' => Scheme_Color::COLOR_2,
+				// ],
 				'selectors' => [
 					'{{WRAPPER}} .bt-post__title, {{WRAPPER}} .bt-post__title a' => 'color: {{VALUE}};',
 				],
@@ -1150,10 +1150,10 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'ametex' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_2,
-				],
+				// 'scheme' => [
+				// 	'type' => Scheme_Color::get_type(),
+				// 	'value' => Scheme_Color::COLOR_2,
+				// ],
 				'selectors' => [
 					'{{WRAPPER}} .bt-post__title:hover, {{WRAPPER}} .bt-post__title a:hover' => 'color: {{VALUE}};',
 				],
@@ -1179,10 +1179,10 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'ametex' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_2,
-				],
+				// 'scheme' => [
+				// 	'type' => Scheme_Color::get_type(),
+				// 	'value' => Scheme_Color::COLOR_2,
+				// ],
 				'selectors' => [
 					'{{WRAPPER}} .bt-post__position' => 'color: {{VALUE}};',
 				],
@@ -1193,7 +1193,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'post_position_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_2,
+				//'scheme' => Scheme_Typography::TYPOGRAPHY_2,
 				'selector' => '{{WRAPPER}} .bt-post__position',
 			]
 		);
@@ -1353,10 +1353,10 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'ametex' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_2,
-				],
+				// 'scheme' => [
+				// 	'type' => Scheme_Color::get_type(),
+				// 	'value' => Scheme_Color::COLOR_2,
+				// ],
 				'selectors' => [
 					'{{WRAPPER}} .bt-post__socials li a' => 'color: {{VALUE}};',
 				],
@@ -1406,10 +1406,10 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'ametex' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_2,
-				],
+				// 'scheme' => [
+				// 	'type' => Scheme_Color::get_type(),
+				// 	'value' => Scheme_Color::COLOR_2,
+				// ],
 				'selectors' => [
 					'{{WRAPPER}} .bt-post__socials li a:hover' => 'color: {{VALUE}};',
 				],
@@ -1472,10 +1472,10 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'ametex' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_2,
-				],
+				// 'scheme' => [
+				// 	'type' => Scheme_Color::get_type(),
+				// 	'value' => Scheme_Color::COLOR_2,
+				// ],
 				'selectors' => [
 					'{{WRAPPER}} .bt-post__readmore' => 'color: {{VALUE}};',
 				],
@@ -1495,10 +1495,10 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'ametex' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_2,
-				],
+				// 'scheme' => [
+				// 	'type' => Scheme_Color::get_type(),
+				// 	'value' => Scheme_Color::COLOR_2,
+				// ],
 				'selectors' => [
 					'{{WRAPPER}} .bt-post__readmore:hover' => 'color: {{VALUE}};',
 				],
@@ -1513,7 +1513,7 @@ class Elementor_btTeamCarousel_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'post_readmore_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_2,
+				//'scheme' => Scheme_Typography::TYPOGRAPHY_2,
 				'selector' => '{{WRAPPER}} .bt-post__readmore',
 			]
 		);

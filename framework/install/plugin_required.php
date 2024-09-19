@@ -55,7 +55,7 @@ function ametex_register_required_plugins() {
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
-	$root = 'http://beplusthemes.com/install/plugin/';
+	$root = 'http://bearsthemespremium.com/install/plugin/';
 	
 	$plugins = array(
 		array(
@@ -64,19 +64,14 @@ function ametex_register_required_plugins() {
 			'required'  => true,
 		),
 		array(
-			'name'      => esc_html__('Ametex Pack - addon for Ametex theme', 'ametex'),
-			'slug'      => $root.'ametex-pack.zip',
-			'required'  => true,
-		),
-		array(
 			'name'      => esc_html__('Custom Post Type UI', 'ametex'),
 			'slug'      => 'custom-post-type-ui',
 			'required'  => true,
 		),
 		array(
-			'name'      => esc_html__('Easy Lightbox', 'ametex'),
-			'slug'      => 'easy-lightbox-wp',
-			'required'  => false,
+			'name'      => esc_html__('Yoast SEO', 'ametex'),
+			'slug'      => 'wordpress-seo',
+			'required'  => true,
 		),
 		array(
 			'name'         => esc_html__('Slider Revolution', 'ametex'),
@@ -114,6 +109,11 @@ function ametex_register_required_plugins() {
 		array(
 			'name'         => esc_html__('Sticky Header Effects for Elementor', 'ametex'),
 			'slug'         => 'sticky-header-effects-for-elementor',
+			'required'     => false,
+		),
+		array(
+			'name'         => esc_html__('Custom Icons for Elementor', 'ametex'),
+			'slug'         => 'custom-icons-for-elementor',
 			'required'     => false,
 		),
 		

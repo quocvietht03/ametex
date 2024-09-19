@@ -92,3 +92,20 @@ require_once get_template_directory().'/framework/includes.php';
 /* Elements function */
 require_once get_template_directory().'/framework/elements/register-elements.php';
 
+/**
+ * WPForms admin notice warning
+ */
+function wpforms_admin_notice__warning() {
+    ?>
+    <div class="notice notice-warning is-dismissible">
+        <p>
+					<?php
+					esc_html_e( 'We are hightly recommend use ', 'text-domain' );
+					echo '<a href="https://wpforms.com/" target="_blank">' . esc_html__( 'WPForms', 'text-domain' ) . '</a>';
+					esc_html_e( ' is the best WordPress contact form plugin.', 'text-domain' );
+					?>
+				</p>
+    </div>
+    <?php
+}
+add_action( 'admin_notices', 'wpforms_admin_notice__warning' );

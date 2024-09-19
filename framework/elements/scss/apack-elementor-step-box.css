@@ -1,0 +1,40 @@
+.elementor-widget-bt_step_box .bt-box__item {
+  position: relative;
+  padding-left: 90px; }
+  .elementor-widget-bt_step_box .bt-box__item:not(:last-child) {
+    padding-bottom: 40px; }
+    .elementor-widget-bt_step_box .bt-box__item:not(:last-child):after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 30px;
+      width: 1px;
+      height: 100%;
+      background: #e6e6e6;
+      z-index: 1; }
+  .elementor-widget-bt_step_box .bt-box__item .bt-box__number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 60px;
+    color: var(--apack-color-accent);
+    background: #ffffff;
+    z-index: 3;
+    border: 1px solid #e6e6e6;
+    -webkit-border-radius: 50%;
+    border-radius: 50%; }
+  .elementor-widget-bt_step_box .bt-box__item .bt-box__title {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+    margin-bottom: 10px; }
+  .elementor-widget-bt_step_box .bt-box__item .bt-box__description {
+    font-size: 16px;
+    line-height: 30px; }
+
+/*# sourceMappingURL=apack-elementor-step-box.css.map */
