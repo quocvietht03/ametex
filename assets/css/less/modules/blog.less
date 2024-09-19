@@ -117,7 +117,7 @@
 		.bt-content {
 			margin-bottom: 30px;
 		}
-
+		
 	}
 	.bt-tags{
 		clear: both;
@@ -159,7 +159,7 @@
 				font-size: 18px;
 				font-weight: @font-weight-bold;
 				line-height: 28px;
-				color: var(--apack-color-primary);
+				color: @heading-text-color;
 				margin-top: 5px;
 				&:hover{
 					color: @main-color;
@@ -211,7 +211,7 @@
 				font-size: 20px;
 				font-weight: @font-weight-bold;
 				line-height: 36px;
-				color: var(--apack-color-primary);
+				color: @heading-text-color;
 				margin-bottom: 0;
 			}
 			h6 {
@@ -298,7 +298,7 @@
 						border-bottom: 0;
 					}
 					> a {
-
+						
 						position: relative;
 						display: block;
 						font-size: 13px;
@@ -425,7 +425,7 @@
 		}
 		&.widget_rss {
 			.wg-title > a{
-				color: var(--apack-color-primary);
+				color: @heading-text-color;
 			}
 		}
 		&.widget_text {
@@ -531,7 +531,7 @@
 .bt-comment-item {
 	padding: 0;
 	&.depth-1 {
-		padding-left: 0;
+		padding-left: 0; 
 	}
 	&.depth-2, &.depth-3, &.depth-4 {
 		padding-left: 60px;
@@ -616,7 +616,7 @@
 	}
 }
 @media(max-width: 767px) {
-	.bt-comment-item {
+	.bt-comment-item { 
 		padding: 10px 0;
 		&.depth-2, &.depth-3, &.depth-4 {
 			padding-left: 25px;
@@ -645,7 +645,7 @@
 		margin-top: 45px;
 		margin-bottom: 5px;
 		span {
-
+			
 			font-size: 22px;
 			font-weight: @font-weight-bold;
 			line-height: 26px;
