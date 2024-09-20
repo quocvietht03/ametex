@@ -49,6 +49,8 @@ if (!function_exists('ametex_enqueue_scripts')) {
 			wp_enqueue_style('ametex-loading', get_template_directory_uri() . '/assets/vendors/loading/style.css', array(), false);
 			wp_enqueue_script('ametex-loading', get_template_directory_uri() . '/assets/vendors/loading/loading.js', array('jquery'), '', true);
 		}
+		wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/vendors/swiper/swiper.min.js', array('jquery'), null, true);
+		wp_enqueue_style('swiper-css', get_template_directory_uri() . '/assets/vendors/swiper/swiper.min.css', array(), true);
 
 		wp_enqueue_style('ametex-main', get_template_directory_uri() . '/assets/css/main.css',  array(), false);
 		wp_enqueue_style('ametex-style', get_template_directory_uri() . '/style.css',  array(), false);
@@ -114,19 +116,4 @@ function wpforms_admin_notice__warning()
 }
 add_action('admin_notices', 'wpforms_admin_notice__warning');
 
-function ametex_enqueue_swiper_assets_for_widget() {
-    if ( is_singular() ) {
-        global $post;
-        if ( ! isset( $post->ID ) ) {
-            return;
-        }
-        ob_start();
-        the_content();
-        $content = ob_get_clean();
-        if ( strpos( $content, 'bt-team-carousel' ) !== false ) {
-            wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/assets/vendors/swiper/swiper.min.js', array( 'jquery' ), null, true );
-            wp_enqueue_style( 'swiper-css', get_template_directory_uri() . '/assets/vendors/swiper/swiper.min.css' );
-        }
-    }
-}
-add_action( 'wp_enqueue_scripts', 'ametex_enqueue_swiper_assets_for_widget' );
+

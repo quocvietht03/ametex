@@ -62,7 +62,6 @@
     /* 24. Testimonial Slider
     /*=================================*/
     var BtTestimonialSliderHandler = function ($scope, $) {
-        console.log('testimonial')
         let $testimonialSliderThumbs = $scope.find(".bt-testimonial-slider-thumbs-main").eq(0),
             $testimonialSliderThumbsContainer =
                 $testimonialSliderThumbs.data("slider-thumbs-container") !== undefined
@@ -144,6 +143,7 @@
             };
 
         let $testimonialSlider = $scope.find(".bt-testimonial-slider-main").eq(0),
+                
             $pagination =
                 $testimonialSlider.data("pagination") !== undefined
                     ? $testimonialSlider.data("pagination")
@@ -159,15 +159,16 @@
             $items =
                 $testimonialSlider.data("items") !== undefined
                     ? $testimonialSlider.data("items")
-                    : 3,
+                    : 1,
+                
             $items_tablet =
                 $testimonialSlider.data("items-tablet") !== undefined
                     ? $testimonialSlider.data("items-tablet")
-                    : 3,
+                    : 1,
             $items_mobile =
                 $testimonialSlider.data("items-mobile") !== undefined
                     ? $testimonialSlider.data("items-mobile")
-                    : 3,
+                    : 1,
             $margin =
                 $testimonialSlider.data("margin") !== undefined
                     ? $testimonialSlider.data("margin")
@@ -212,8 +213,8 @@
                 ($testimonialSlider.data("slider-thumbs-container")) &&
                 $testimonialSlider.data("slider-thumbs-container") === $testimonialSliderThumbsContainer)
                 ? new Swiper(
-                    $testimonialSliderThumbs,
-                    $testimonialSliderThumbsOptions
+                    $testimonialSliderThumbs[0],
+                    $testimonialSliderThumbsOptions[0]
                 )
                 : false,
             $testimonialSliderOptions = {
@@ -221,7 +222,7 @@
                 speed: $speed,
                 effect: $effect,
                 centeredSlides: $centeredSlides,
-                slidesPerView: $items,
+                slidesPerView: $items_mobile,
                 spaceBetween: $margin,
                 grabCursor: $grab_cursor,
                 autoHeight: true,
@@ -244,21 +245,22 @@
                 breakpoints: {
                     // when window width is <= 480px
                     480: {
-                        slidesPerView: $items_mobile,
+                        slidesPerView: $items_tablet,
                         spaceBetween: $margin_mobile
                     },
                     // when window width is <= 640px
                     768: {
-                        slidesPerView: $items_tablet,
+                        slidesPerView: $items,
                         spaceBetween: $margin_tablet
                     }
                 }
             };
 
-        var $testimonialSliderObj = new Swiper(
-            $testimonialSlider,
-            $testimonialSliderOptions
-        );
+            var $testimonialSliderObj;
+
+        if ($testimonialSlider.length) {
+            $testimonialSliderObj = new Swiper($testimonialSlider[0], $testimonialSliderOptions);
+        } 
         if ($autoplay === 0) {
             $testimonialSliderObj.autoplay.stop();
         }
@@ -274,7 +276,6 @@
     };
 
     jQuery(window).on("elementor/frontend/init", function () {
-        console.log('testimonial init')
         elementorFrontend.hooks.addAction(
             "frontend/element_ready/bt-testimonial-slider.default",
             BtTestimonialSliderHandler

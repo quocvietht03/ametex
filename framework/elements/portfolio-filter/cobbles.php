@@ -23,22 +23,28 @@ foreach ( $cobbles_arr as $cobbles_key => $cobbles_val ) {
 $cobbles_total = count( $cobbles );
 
 ?>
-<div <?php echo '' . $this->get_render_attribute_string( 'wrapper' ); ?>>
-	<div <?php echo '' . $this->get_render_attribute_string( 'container' ); ?>>
-		<div class="grid bt-isotope-grid-<?php echo esc_attr( $this->get_id() ); ?>" style="<?php echo 'margin: -' . ( $settings['space_between']['size'] / 2 ) . 'px -' . ( $settings['space_between']['size'] / 2 ) . 'px 0 -' . ( $settings['space_between']['size'] / 2 ) . 'px;'; ?>">
-			<div class="grid-sizer <?php echo 'item-width--' . $settings['columns'] . ' item-width-tablet--' . $settings['columns_tablet'] . ' item-width-mobile--' . $settings['columns_mobile']; ?>"></div>
-			<?php $count = 0;
-			while ( $wp_query->have_posts() ) {
-				$wp_query->the_post(); ?>
-                <div class="grid-item <?php echo $this->ametex_render_categories_class_for_post( get_the_ID() );
-				echo 'item-width--' . $cobbles[ $count ]['width'] . '-' . $settings['columns'] . ' item-width-tablet--' . $cobbles[ $count ]['width'] . '-' . $settings['columns_tablet'] . ' item-width-mobile--' . $cobbles[ $count ]['width'] . '-' . $settings['columns_mobile']; ?>" style="<?php echo 'padding: ' . ( $settings['space_between']['size'] / 2 ) . 'px;' ?>">
-					<?php require get_template_directory() . '/framework/elements/portfolio-filter/' . $settings['grid_layout'] . '-' . $settings['cobbles_skin'] . '.php'; ?>
-				</div>
-				<?php $count ++;
-				if ( $count >= $cobbles_total ) {
-					$count = 0;
-				}
-			} ?>
-		</div>
-	</div>
+<div <?php echo '' . $this->get_render_attribute_string('wrapper'); ?>>
+    <div <?php echo '' . $this->get_render_attribute_string('container'); ?>>
+        <div class="grid bt-isotope-grid-<?php echo esc_attr($this->get_id()); ?>" style="<?php echo 'margin: -' . (isset($settings['space_between']['size']) ? $settings['space_between']['size'] / 2 : 0) . 'px -' . (isset($settings['space_between']['size']) ? $settings['space_between']['size'] / 2 : 0) . 'px 0 -' . (isset($settings['space_between']['size']) ? $settings['space_between']['size'] / 2 : 0) . 'px;'; ?>">
+            <div class="grid-sizer <?php echo 'item-width--' . (isset($settings['columns']) ? $settings['columns'] : 'default') . ' item-width-tablet--' . (isset($settings['columns_tablet']) ? $settings['columns_tablet'] : 'default') . ' item-width-mobile--' . (isset($settings['columns_mobile']) ? $settings['columns_mobile'] : 'default'); ?>"></div>
+            <?php 
+            $count = 0;
+            while ($wp_query->have_posts()) {
+                $wp_query->the_post(); ?>
+                <div class="grid-item <?php 
+                    echo $this->ametex_render_categories_class_for_post(get_the_ID());
+                    echo ' item-width--' . (isset($cobbles[$count]['width']) ? $cobbles[$count]['width'] : 'default') . '-' . (isset($settings['columns']) ? $settings['columns'] : 'default') . 
+                    ' item-width-tablet--' . (isset($cobbles[$count]['width']) ? $cobbles[$count]['width'] : 'default') . '-' . (isset($settings['columns_tablet']) ? $settings['columns_tablet'] : 'default') . 
+                    ' item-width-mobile--' . (isset($cobbles[$count]['width']) ? $cobbles[$count]['width'] : 'default') . '-' . (isset($settings['columns_mobile']) ? $settings['columns_mobile'] : 'default'); ?>" 
+                    style="<?php echo 'padding: ' . (isset($settings['space_between']['size']) ? $settings['space_between']['size'] / 2 : 0) . 'px;'; ?>">
+                    <?php require get_template_directory() . '/framework/elements/portfolio-filter/' . $settings['grid_layout'] . '-' . $settings['cobbles_skin'] . '.php'; ?>
+                </div>
+                <?php 
+                $count++;
+                if ($count >= $cobbles_total) {
+                    $count = 0;
+                }
+            } ?>
+        </div>
+    </div>
 </div>
