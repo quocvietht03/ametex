@@ -10,11 +10,11 @@ body {
     margin: 0;
     padding: 0;
 
-    > li {
+    >li {
         position: relative;
         list-style: none;
 
-        > a {
+        >a {
             display: inline-block;
             font-size: 15px;
             line-height: 50px;
@@ -95,7 +95,9 @@ body {
 }
 
 .bt-btn-gra {
-    &.elementor-widget-button a.elementor-button, &.elementor-widget-button .elementor-button {
+
+    &.elementor-widget-button a.elementor-button,
+    &.elementor-widget-button .elementor-button {
         background: linear-gradient(120deg, #e4555d 0%, #f47c54 100%);
 
         &:hover {
@@ -249,7 +251,8 @@ body {
         letter-spacing: 0;
         padding: 0 10%;
 
-        .eael-testimonial-image, .eael-testimonial-content {
+        .eael-testimonial-image,
+        .eael-testimonial-content {
             display: inline-block;
             vertical-align: middle;
             width: 40%;
@@ -277,7 +280,8 @@ body {
 
     }
 
-    .swiper-button-prev, .swiper-button-next {
+    .swiper-button-prev,
+    .swiper-button-next {
         color: #716886;
 
         &:hover {
@@ -287,7 +291,9 @@ body {
 
     @media (max-width: 767px) {
         .eael-testimonial-item {
-            .eael-testimonial-image, .eael-testimonial-content {
+
+            .eael-testimonial-image,
+            .eael-testimonial-content {
                 width: 100%;
                 padding: 0;
             }
@@ -298,7 +304,8 @@ body {
         }
     }
 
-    &.elementor-testimonial--layout-image_left, &.elementor-testimonial--layout-image_right {
+    &.elementor-testimonial--layout-image_left,
+    &.elementor-testimonial--layout-image_right {
         .elementor-testimonial {
             max-width: 960px;
             margin-left: auto;
@@ -346,7 +353,9 @@ body {
         }
 
         .elementor-main-swiper {
-            .elementor-swiper-button-prev, .elementor-swiper-button-next {
+
+            .elementor-swiper-button-prev,
+            .elementor-swiper-button-next {
                 color: #716886;
 
                 &:hover {
@@ -374,18 +383,29 @@ body {
         font-size: 0;
         letter-spacing: 0;
 
-        .eael-team-image, .eael-team-content {
+        .eael-team-image,
+        .eael-team-content {
             display: inline-block;
             vertical-align: middle;
             width: 40%;
         }
 
-        .eael-team-image > figure img {
+        .eael-team-image>figure img {
             height: auto;
         }
 
         .eael-team-content {
             width: 60%;
+        }
+
+        @media(max-width:650px) {
+            display: flex;
+            flex-direction: column;
+
+            .eael-team-image,
+            .eael-team-content {
+                width: 100%;
+            }
         }
     }
 
@@ -474,7 +494,9 @@ body {
 .bt-timelime-item {
     @media (min-width: 992px) {
         .eael-content-timeline-block:nth-child(2n + 1) .eael-content-timeline-content {
-            p, h2 {
+
+            p,
+            h2 {
                 text-align: right !important;
             }
         }
@@ -625,7 +647,8 @@ body {
             }
         }
 
-        .elementor-icon-list-text, .elementor-icon-list-text a {
+        .elementor-icon-list-text,
+        .elementor-icon-list-text a {
             color: @main-color;
         }
 
@@ -698,7 +721,8 @@ body {
             color: @main-color;
         }
 
-        &:before, &:after {
+        &:before,
+        &:after {
             .easing-animation;
             content: "";
             position: absolute;
@@ -726,7 +750,8 @@ body {
                 color: #ffffff;
             }
 
-            &:before, &:after {
+            &:before,
+            &:after {
                 background: @main-color;
             }
         }
@@ -735,7 +760,7 @@ body {
     .elementor-widget-theme-post-title {
         margin-bottom: 10px !important;
 
-        .elementor-heading-title > a:hover {
+        .elementor-heading-title>a:hover {
             color: @main-color;
         }
     }
@@ -801,7 +826,8 @@ body {
         -ms-box-shadow: 0 6px 24px fadeout(#f97a60, 77);
         box-shadow: 0 6px 24px fadeout(#f97a60, 77);
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             border-color: #ffffff;
             -webkit-box-shadow: 0 6px 24px fadeout(#f97a60, 77);
             -ms-box-shadow: 0 6px 24px fadeout(#f97a60, 77);
@@ -838,7 +864,8 @@ body {
         text-align: center;
         height: auto;
 
-        .elementor-share-btn__icon, .elementor-share-btn__text {
+        .elementor-share-btn__icon,
+        .elementor-share-btn__text {
             display: block;
             width: 100%;
         }
@@ -876,7 +903,9 @@ body {
 }
 
 .bt-contact-section {
-    .elementor-widget-heading .elementor-heading-title, .elementor-widget-form .elementor-form {
+
+    .elementor-widget-heading .elementor-heading-title,
+    .elementor-widget-form .elementor-form {
         max-width: 490px;
         margin-left: 150px;
     }
@@ -915,7 +944,9 @@ body {
     }
 
     @media (max-width: 767px) {
-        .elementor-widget-heading .elementor-heading-title, .elementor-widget-form .elementor-form {
+
+        .elementor-widget-heading .elementor-heading-title,
+        .elementor-widget-form .elementor-form {
             margin-left: 0;
             padding: 0 15px;
         }
@@ -923,6 +954,7 @@ body {
 }
 
 .elementor-element {
+
     .swiper-container-rtl .swiper-button-prev,
     .swiper-container-rtl .swiper-button-next {
         background-image: none;
