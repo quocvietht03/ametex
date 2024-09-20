@@ -1,43 +1,43 @@
 @font-face {
     font-family: 'NeueEinstellung';
-    src: url('WEB/NeueEinstellung-Normal.eot');
-    src: url('WEB/NeueEinstellung-Normal.eot#iefix') format('embedded-opentype'),
-         url('WEB/NeueEinstellung-Normal.woff2') format('woff2'),
-         url('WEB/NeueEinstellung-Normal.woff') format('woff'),
-         url('TTF/NeueEinstellung-Normal.ttf') format('truetype');
+    src: url('eot/NeueEinstellung-Normal.eot');
+    src: url('eot/NeueEinstellung-Normal.eot#iefix') format('embedded-opentype'),
+         url('woff/NeueEinstellung-Normal.woff2') format('woff2'),
+         url('woff/NeueEinstellung-Normal.woff') format('woff'),
+         url('ttf/NeueEinstellung-Normal.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'NeueEinstellung';
-    src: url('WEB/NeueEinstellung-Bold.eot');
-    src: url('WEB/NeueEinstellung-Bold.eot?#iefix') format('embedded-opentype'),
-         url('WEB/NeueEinstellung-Bold.woff2') format('woff2'),
-         url('WEB/NeueEinstellung-Bold.woff') format('woff'),
-         url('TTF/NeueEinstellung-Bold.ttf') format('truetype');
+    src: url('eot/NeueEinstellung-Bold.eot');
+    src: url('eot/NeueEinstellung-Bold.eot#iefix') format('embedded-opentype'),
+         url('woff/NeueEinstellung-Bold.woff2') format('woff2'),
+         url('woff/NeueEinstellung-Bold.woff') format('woff'),
+         url('ttf/NeueEinstellung-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'NeueEinstellung';
-    src: url('WEB/NeueEinstellung-Medium.eot');
-    src: url('WEB/NeueEinstellung-Medium.eot?#iefix') format('embedded-opentype'),
-         url('WEB/NeueEinstellung-Medium.woff2') format('woff2'),
-         url('WEB/NeueEinstellung-Medium.woff') format('woff'),
-         url('TTF/NeueEinstellung-Medium.ttf') format('truetype');
+    src: url('eot/NeueEinstellung-Medium.eot');
+    src: url('eot/NeueEinstellung-Medium.eot#iefix') format('embedded-opentype'),
+         url('woff/NeueEinstellung-Medium.woff2') format('woff2'),
+         url('woff/NeueEinstellung-Medium.woff') format('woff'),
+         url('ttf/NeueEinstellung-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'NeueEinstellung';
-    src: url('WEB/NeueEinstellung-SemiBold.eot');
-    src: url('WEB/NeueEinstellung-SemiBold.eot?#iefix') format('embedded-opentype'),
-         url('WEB/NeueEinstellung-SemiBold.woff2') format('woff2'),
-         url('WEB/NeueEinstellung-SemiBold.woff') format('woff'),
-         url('TTF/NeueEinstellung-SemiBold.ttf') format('truetype');
+    src: url('eot/NeueEinstellung-SemiBold.eot');
+    src: url('eot/NeueEinstellung-SemiBold.eot#iefix') format('embedded-opentype'),
+         url('woff/NeueEinstellung-SemiBold.woff2') format('woff2'),
+         url('woff/NeueEinstellung-SemiBold.woff') format('woff'),
+         url('ttf/NeueEinstellung-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
