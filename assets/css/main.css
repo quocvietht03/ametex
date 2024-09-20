@@ -157,7 +157,7 @@
   100% { box-shadow:0 0 0 0 rgba(250,122,96,0); }
 }
 body {
-  font-family:Poppins;
+  font-family:NeueEinstellung;
   font-size:16px;
   line-height:26px;
   letter-spacing:0;
@@ -3176,5 +3176,3 @@ body {
   height:auto;
   background-image:none;
 }
-.elementor-widget-bt_portfolio_cobbles, .elementor-widget-bt_team_carousel, .elementor-widget-bt_blog_grid { font-family:'NeueEinstellung'; }
-.elementor-widget-bt_portfolio_cobbles .bt-grid__heading .bt-btn-link { background:linear-gradient(120deg,#e4555d 0%,#f47c54 100%); }

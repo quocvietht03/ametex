@@ -257,7 +257,7 @@
         border-radius: 50%;
 
         &:hover {
-            color: var(--apack-color-accent);
+            color: var(--e-global-color-accent);
             background: #ffffff;
         }
     }
@@ -274,16 +274,16 @@
             margin: 0;
             font-size: 18px;
             line-height: normal;
-            color: var(--apack-color-primary);
+            color: var(--e-global-color-primary);
             font-weight: 500;
             transition: .3s;
 
             &.is-checked {
-                color: var(--apack-color-accent);
+                color: var(--e-global-color-accent);
             }
 
             &:hover {
-                color: var(--apack-color-accent);
+                color: var(--e-global-color-accent);
             }
         }
     }
@@ -347,7 +347,7 @@
                             transform: translateX(-50%) translateY(-50%);
 
                             &:hover {
-                                color: var(--apack-color-accent);
+                                color: var(--e-global-color-accent);
                                 background: #ffffff;
                             }
                         }
@@ -364,10 +364,10 @@
                         margin-bottom: 0;
 
                         a {
-                            color: var(--apack-color-primary);
+                            color: var(--e-global-color-primary);
 
                             &:hover {
-                                color: var(--apack-color-accent);
+                                color: var(--e-global-color-accent);
                             }
                         }
                     }
@@ -380,7 +380,7 @@
                             color: #716886;
 
                             &:hover {
-                                color: var(--apack-color-accent);
+                                color: var(--e-global-color-accent);
                             }
                         }
                     }
@@ -460,7 +460,7 @@
                             color: white;
 
                             &:hover {
-                                color: var(--apack-color-primary, #4d3484);
+                                color: var(--e-global-color-primary, #4d3484);
                             }
                         }
                     }
@@ -474,7 +474,7 @@
                             color: inherit;
 
                             &:hover {
-                                color: var(--apack-color-primary, #4d3484);
+                                color: var(--e-global-color-primary, #4d3484);
                             }
                         }
                     }
@@ -540,7 +540,7 @@
                             transform: translateX(-50%) translateY(-50%);
 
                             &:hover {
-                                color: var(--apack-color-accent);
+                                color: var(--e-global-color-accent);
                                 background: #ffffff;
                             }
                         }
@@ -557,10 +557,10 @@
                         margin-bottom: 0;
 
                         a {
-                            color: var(--apack-color-primary);
+                            color: var(--e-global-color-primary);
 
                             &:hover {
-                                color: var(--apack-color-accent);
+                                color: var(--e-global-color-accent);
                             }
                         }
                     }
@@ -573,7 +573,7 @@
                             color: #716886;
 
                             &:hover {
-                                color: var(--apack-color-accent);
+                                color: var(--e-global-color-accent);
                             }
                         }
                     }
