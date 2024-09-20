@@ -43,7 +43,8 @@ if (!function_exists('ametex_enqueue_scripts')) {
 		if ($font_awesome) {
 			wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/iconfonts/font-awesome/css/font-awesome.min.css', array(), false);
 		}
-
+		/* Neue Einstellung */
+		wp_enqueue_style('font-neueeinstellung', get_template_directory_uri() . '/assets/font/neueeinstellung/font.css', array(), false);
 		/* Site Loading */
 		if (isset($ametex_options['site_loading']) && $ametex_options['site_loading']) {
 			wp_enqueue_style('ametex-loading', get_template_directory_uri() . '/assets/vendors/loading/style.css', array(), false);
