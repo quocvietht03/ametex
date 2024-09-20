@@ -3146,6 +3146,10 @@ body {
   color:#0077b5;
   background:transparent;
 }
+.elementor-widget-share-buttons.bt-socials-share .elementor-share-btn.elementor-share-btn_pinterest .elementor-share-btn__icon {
+  background:transparent;
+  color:#bd081c;
+}
 .bt-contact-section .elementor-widget-heading .elementor-heading-title, .bt-contact-section .elementor-widget-form .elementor-form {
   max-width:490px;
   margin-left:150px;
@@ -3183,3 +3187,4 @@ body {
   height:auto;
   background-image:none;
 }
+nav.elementor-nav-menu--main .elementor-nav-menu > li .sub-menu { min-width:200px !important; }
