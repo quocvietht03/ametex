@@ -92,11 +92,12 @@ require_once get_template_directory() . '/framework/inc/less-compile.php';
 /* Post Functions */
 require_once get_template_directory() . '/framework/templates/post-functions.php';
 
-/* Function framework */
-require_once get_template_directory() . '/framework/includes.php';
-
 /* Elements function */
 require_once get_template_directory() . '/framework/elements/register-elements.php';
+
+/* Theme install */
+require_once get_template_directory() . '/install/plugin-required.php';
+require_once get_template_directory() . '/install/import-pack/import-functions.php';
 
 /**
  * WPForms admin notice warning
