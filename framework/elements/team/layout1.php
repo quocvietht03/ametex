@@ -45,7 +45,7 @@ if(isset($fields['linkedin']) && !empty($fields['linkedin'])){
 			if( !empty( $settings['show_read_more'] ) || !empty( $settings['read_more_icon'] ) ) {
 				$read_more_icon_html = !empty( $settings['read_more_icon'] ) ? ' <i class="'.$settings['read_more_icon'].'"></i>' : '';
 				
-				echo '<a class="bt-post__readmore" href="'.get_the_permalink().'">'.$read_more_icon_html.'</a>';
+				echo '<a class="bt-post__readmore" href="#">'.$read_more_icon_html.'</a>';
 			}
 		?>
 	</div>
@@ -53,7 +53,7 @@ if(isset($fields['linkedin']) && !empty($fields['linkedin'])){
 	<div class="bt-post__content">
 		<?php
 			if( !empty( $settings['show_title'] ) ) {
-				echo '<h3 class="bt-post__title"><a class="bt-post__link" href="'.get_the_permalink().'">'.get_the_title().'</a></h3>';
+				echo '<h3 class="bt-post__title"><a class="bt-post__link" href="#">'.get_the_title().'</a></h3>';
 			}
 			
 			if( !empty( $settings['show_position'] ) && !empty( $position ) ) {
