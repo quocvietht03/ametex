@@ -1,9 +1,8 @@
-a:4:{s:4:"root";s:96:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/style.less";s:8:"compiled";s:148618:".easing-animation {
+a:4:{s:4:"root";s:96:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/style.less";s:8:"compiled";s:148939:".easing-animation {
   -wekbit-transition:all 0.4s;
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
 }
 .easing-animation-long {
   -webkit-transition:all 0.7s;
@@ -168,7 +167,6 @@ a {
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
   color:#716886;
 }
 a:hover, a:focus, a:active {
@@ -214,7 +212,6 @@ input, textarea, select {
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
   outline:none;
   color:#716886;
   background-color:transparent;
@@ -248,7 +245,6 @@ select {
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
   display:inline-block;
   padding:12px 35px;
   outline:0;
@@ -573,7 +569,6 @@ img.alignright { margin:0 0 20px 20px; }
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
   background-color:rgba(0,0,0,0.7);
   bottom:0;
   box-sizing:border-box;
@@ -805,7 +800,6 @@ img.alignright { margin:0 0 20px 20px; }
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
   background:#333333;
   -webkit-border-radius:3px;
   border-radius:3px;
@@ -882,7 +876,6 @@ img.alignright { margin:0 0 20px 20px; }
     -moz-transition:all 0.4s;
     -o-transition:all 0.4s;
     transition:all 0.4s;
-    color:red;
     position:absolute;
     top:0;
     right:0;
@@ -897,7 +890,6 @@ img.alignright { margin:0 0 20px 20px; }
     -moz-transition:all 0.4s;
     -o-transition:all 0.4s;
     transition:all 0.4s;
-    color:red;
     content:"\f107";
     font-family:FontAwesome;
   }
@@ -1078,7 +1070,6 @@ img.alignright { margin:0 0 20px 20px; }
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
   float:left;
   width:50%;
   padding:40px;
@@ -1220,7 +1211,6 @@ img.alignright { margin:0 0 20px 20px; }
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
   content:"";
   position:absolute;
   top:0;
@@ -1610,7 +1600,6 @@ img.alignright { margin:0 0 20px 20px; }
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
   width:100%;
   height:auto;
   -webkit-border-radius:50%;
@@ -1769,7 +1758,6 @@ img.alignright { margin:0 0 20px 20px; }
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
   width:100%;
   height:auto;
   -webkit-border-radius:50%;
@@ -2451,7 +2439,6 @@ body #site_backtop:hover, body #site_backtop:focus {
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
   background:#ffffff;
   position:relative;
   overflow:hidden;
@@ -3017,7 +3004,6 @@ body {
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
   color:#fa7a60;
 }
 .bt-acticle-template3 .elementor-widget-icon .elementor-icon:before, .bt-acticle-template3 .elementor-widget-icon .elementor-icon:after {
@@ -3025,7 +3011,6 @@ body {
   -moz-transition:all 0.4s;
   -o-transition:all 0.4s;
   transition:all 0.4s;
-  color:red;
   content:"";
   position:absolute;
   top:0px;
@@ -3187,5 +3172,8 @@ body {
   height:auto;
   background-image:none;
 }
-nav.elementor-nav-menu--main .elementor-nav-menu > li .sub-menu { min-width:200px !important; }
-";s:5:"files";a:18:{s:96:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/style.less";i:1571380742;s:100:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/variables.less";i:1726805614;s:97:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/mixins.less";i:1726806309;s:100:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/animation.less";i:1571380742;s:111:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/component/typography.less";i:1571380742;s:106:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/component/color.less";i:1571380742;s:106:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/component/input.less";i:1571380742;s:107:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/component/button.less";i:1571380742;s:105:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/component/util.less";i:1571380742;s:105:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/component/unit.less";i:1571380742;s:105:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/modules/header.less";i:1726713291;s:107:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/modules/titlebar.less";i:1571380742;s:105:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/modules/footer.less";i:1571380742;s:103:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/modules/blog.less";i:1726817929;s:106:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/modules/element.less";i:1571380742;s:110:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/modules/testimonial.less";i:1571380742;s:95:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/main.less";i:1571380742;s:97:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/custom.less";i:1726820466;}s:7:"updated";i:1726890111;}
+nav.elementor-nav-menu--main .elementor-nav-menu >li .sub-menu { min-width:200px !important; }
+@media (max-width: 850px) {
+  .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--1-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--2-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--3-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--4-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--5-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--6-default { width:100%; }
+}
+";s:5:"files";a:18:{s:96:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/style.less";i:1571380742;s:100:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/variables.less";i:1726805614;s:97:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/mixins.less";i:1727054068;s:100:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/animation.less";i:1571380742;s:111:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/component/typography.less";i:1571380742;s:106:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/component/color.less";i:1571380742;s:106:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/component/input.less";i:1571380742;s:107:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/component/button.less";i:1571380742;s:105:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/component/util.less";i:1571380742;s:105:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/component/unit.less";i:1571380742;s:105:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/modules/header.less";i:1726713291;s:107:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/modules/titlebar.less";i:1571380742;s:105:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/modules/footer.less";i:1571380742;s:103:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/modules/blog.less";i:1726817929;s:106:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/modules/element.less";i:1571380742;s:110:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/modules/testimonial.less";i:1571380742;s:95:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/main.less";i:1571380742;s:97:"/Users/ducdung/Local Sites/ametex/app/public/wp-content/themes/ametex/assets/css/less/custom.less";i:1726892051;}s:7:"updated";i:1727056176;}
