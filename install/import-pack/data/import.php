@@ -21,7 +21,6 @@ $plugin_includes = array(
   array(
     'name'     => __( 'Essential Addons for Elementor', 'ametex' ),
     'slug'     => 'essential-addons-for-elementor-lite',
-    'source'   => IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD . 'essential-addons-for-elementor-lite.zip',
   ),
   array(
     'name'     => __( 'Sticky Header Effects for Elementor', 'ametex' ),
