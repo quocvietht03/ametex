@@ -3187,12 +3187,3 @@ nav.elementor-nav-menu--main .elementor-nav-menu >li .sub-menu { min-width:200px
 @media (max-width: 600px) {
   .admin-bar .she-header { top:0 !important; }
 }
-@media (min-width: 1025px) {
-  .elementor-441 .elementor-element.elementor-element-115a987 { width:57.281% !important; }
-}
-@media (max-width: 768px) {
-  .elementor-widget-slider_revolution, .wp-block-themepunch-revslider, #rev_slider_1_1_forcefullwidth, .rs-fullwidth-wrap, .rs-fw-forcer {
-    width:100% !important;
-    max-width:100vw !important;
-  }
-}
