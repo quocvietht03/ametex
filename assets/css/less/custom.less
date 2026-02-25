@@ -997,19 +997,32 @@ nav {
     }
 }
 
-
-.admin-bar .she-header {
-    top: 32px !important;
+//fix padding bottom image
+.elementor-87 .elementor-element.elementor-element-193517b .elementor-posts-container .elementor-post__thumbnail {
+    padding-bottom: calc(0.66 * 100%) !important;
 }
-@media screen and (max-width: 782px) {
-    .admin-bar .she-header {
-        top: 46px !important;
+
+// fix top header with mobile
+.admin-bar .she-header { 
+    top: 32px !important; 
+}
+@media (max-width: 600px) { .admin-bar .she-header { top: 0 !important; } }
+@media (max-width: 782px) { .admin-bar .she-header { top: 46px !important; } }
+
+//fix full width slider revolution mobile home page 1
+@media (max-width: 768px) {
+    .elementor-widget-slider_revolution,
+    .wp-block-themepunch-revslider,
+    #rev_slider_1_1_forcefullwidth,
+    .rs-fullwidth-wrap,
+    .rs-fw-forcer {
+        width: 100% !important;
+        max-width: 100vw !important;
     }
 }
-@media screen and (max-width: 600px) {
-    .admin-bar .she-header {
-        top: 0 !important;
+//fix width image homepage 2
+@media (min-width: 1024px) {
+    .elementor-441 .elementor-element.elementor-element-115a987 {
+        width: 57.281% !important;
     }
 }
-
-

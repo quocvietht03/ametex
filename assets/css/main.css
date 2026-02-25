@@ -3179,3 +3179,20 @@ nav.elementor-nav-menu--main .elementor-nav-menu >li .sub-menu { min-width:200px
 @media (max-width: 850px) {
   .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--1-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--2-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--3-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--4-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--5-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--6-default { width:100%; }
 }
+.elementor-87 .elementor-element.elementor-element-193517b .elementor-posts-container .elementor-post__thumbnail { padding-bottom:calc(66%) !important; }
+.admin-bar .she-header { top:32px !important; }
+@media (max-width: 600px) {
+  .admin-bar .she-header { top:0 !important; }
+}
+@media (max-width: 782px) {
+  .admin-bar .she-header { top:46px !important; }
+}
+@media (max-width: 768px) {
+  .elementor-widget-slider_revolution, .wp-block-themepunch-revslider, #rev_slider_1_1_forcefullwidth, .rs-fullwidth-wrap, .rs-fw-forcer {
+    width:100% !important;
+    max-width:100vw !important;
+  }
+}
+@media (min-width: 1024px) {
+  .elementor-441 .elementor-element.elementor-element-115a987 { width:57.281% !important; }
+}
