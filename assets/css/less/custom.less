@@ -1004,14 +1004,28 @@ nav {
 .elementor-widget-bt_portfolio_filter {
     overflow: hidden !important; 
 }
-
-// fix top header with mobile
-.admin-bar .she-header { 
-    top: 32px !important; 
+.admin-bar .she-header {
+    top: 32px !important;
 }
-@media (max-width: 600px) { .admin-bar .she-header { top: 0 !important; } }
-@media (max-width: 782px) { .admin-bar .she-header { top: 46px !important; } }
+//fix admin bar
+@media (max-width: 800px) { 
+    .admin-bar .she-header { 
+        top: 46px !important; 
+    } 
+}
+//fix admin bar
+@media (max-width: 600px) { 
+    .admin-bar .she-header {
+         top: 0 !important; 
+    } 
+}
 
+//fix width image homepage 2
+@media (min-width: 1024px) {
+    .elementor-441 .elementor-element.elementor-element-115a987 {
+        width: 57.281% !important;
+    }
+}
 //fix full width slider revolution mobile home page 1
 @media (max-width: 768px) {
     .elementor-widget-slider_revolution,
@@ -1024,9 +1038,4 @@ nav {
     }
 }
 
-//fix width image homepage 2
-@media (min-width: 1024px) {
-    .elementor-441 .elementor-element.elementor-element-115a987 {
-        width: 57.281% !important;
-    }
-}
+
