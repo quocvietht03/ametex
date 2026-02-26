@@ -3179,3 +3179,5 @@ nav.elementor-nav-menu--main .elementor-nav-menu >li .sub-menu { min-width:200px
 @media (max-width: 850px) {
   .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--1-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--2-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--3-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--4-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--5-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--6-default { width:100%; }
 }
+.elementor-widget-bt_portfolio_filter { overflow:hidden !important; }
+.over-flowhidden { overflow:hidden; }
