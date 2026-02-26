@@ -970,7 +970,7 @@ img.alignright { margin:0 0 20px 20px; }
   margin-top:0;
   margin-bottom:15px;
 }
-.blog .bt-post-item .bt-title a, .archive .bt-post-item .bt-title a, .search .bt-post-item .bt-title a { color:#333333; }
+.blog .bt-post-item .bt-title a, .archive .bt-post-item .bt-title a, .search .bt-post-item .bt-title a { color:inherit; }
 .blog .bt-post-item .bt-title a:hover, .archive .bt-post-item .bt-title a:hover, .search .bt-post-item .bt-title a:hover { color:#fa7a60; }
 .blog .bt-post-item .bt-media, .archive .bt-post-item .bt-media, .search .bt-post-item .bt-media { margin-bottom:20px; }
 .blog .bt-post-item .bt-media img, .archive .bt-post-item .bt-media img, .search .bt-post-item .bt-media img {
@@ -1172,7 +1172,7 @@ img.alignright { margin:0 0 20px 20px; }
   position:relative;
   margin-bottom:30px;
 }
-.bt-sidebar .widget .wg-title, .bt-sidebar .widget .widgettitle {
+.bt-sidebar .widget .wp-block-heading, .bt-sidebar .widget .wg-title, .bt-sidebar .widget .widgettitle {
   position:relative;
   font-size:20px;
   font-weight:600;
@@ -1181,7 +1181,7 @@ img.alignright { margin:0 0 20px 20px; }
   margin-bottom:25px;
   padding-bottom:15px;
 }
-.bt-sidebar .widget .wg-title:after, .bt-sidebar .widget .widgettitle:after {
+.bt-sidebar .widget .wp-block-heading:after, .bt-sidebar .widget .wg-title:after, .bt-sidebar .widget .widgettitle:after {
   content:"";
   position:absolute;
   bottom:0;
@@ -3179,5 +3179,5 @@ nav.elementor-nav-menu--main .elementor-nav-menu >li .sub-menu { min-width:200px
 @media (max-width: 850px) {
   .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--1-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--2-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--3-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--4-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--5-default, .elementor-widget-bt_portfolio_filter .grid-item.item-width-tablet--6-default { width:100%; }
 }
-.elementor-widget-bt_portfolio_filter { overflow:hidden !important; }
+.featuredwork { overflow:hidden; }
 .over-flowhidden { overflow:hidden; }

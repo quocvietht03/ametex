@@ -77,8 +77,8 @@ function ametex_register_required_plugins() {
 		),
 		array(
 			'name'          => 'Essential Addons for Elementor',
-			'slug'          => 'essential-addons-elementor',
-			'source'        => $pathfile . 'essential-addons-elementor.zip',
+			'slug'          => 'essential-addons-for-elementor',
+			'source'        => $pathfile . 'essential-addons-for-elementor.zip',
 			'required'      => true,
 		),
 		array(
@@ -87,9 +87,9 @@ function ametex_register_required_plugins() {
 			'required'      => true,
 		),
 		array(
-			'name'          => 'Slider Revolution',
-			'slug'          => 'revslider',
-			'source'        => $pathfile . 'revslider.zip',
+			'name'          => 'Smart Slider 3 Pro',
+			'slug'          => 'nextend-smart-slider3-pro',
+			'source'        => $pathfile . 'nextend-smart-slider3-pro.zip',
 			'required'      => true,
 		),
 		array(

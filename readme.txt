@@ -18,12 +18,13 @@ Text Domain: ametex
 5. Navigate to Appearance > Theme Options in your admin panel and customize to taste.
 
 == Changelog ==
-= 1.1 =
-* Released: October 5, 2018
-	- Support Ultimate GDPR.
-	- Update Small issue.
+= 2.0 =
+* Released: Feb 26, 2026
+- Compatible Latest WP and Plugins
+- Update Layout, Content pages, post...
+- Fixed many issues...
 
 = 1.0 =
-* Released: September 22, 2018
+* Released: Sep 22, 2018
 
 Initial release
